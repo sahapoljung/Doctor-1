@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DataSickFragment"
+    android:id="@+id/lndatasick">
+
+
+
+    <TextView
+        android:id="@+id/txtsickdata1"
+        android:clickable="true"
+        android:textSize="@dimen/h1"
+        android:text="@string/s1"
+        android:gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/txtsickdata2"
+        android:clickable="true"
+        android:textSize="@dimen/h1"
+        android:text="@string/s2"
+        android:gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/txtsickdata3"
+        android:clickable="true"
+        android:textSize="@dimen/h1"
+        android:text="@string/s3"
+        android:gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/txtsickdata4"
+        android:clickable="true"
+        android:textSize="@dimen/h1"
+        android:text="@string/s4"
+        android:gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/txtsickdata5"
+        android:clickable="true"
+        android:textSize="@dimen/h1"
+        android:text="@string/s5"
+        android:gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/txtsickdata6"
+        android:clickable="true"
+        android:textSize="@dimen/h1"
+        android:text="@string/s6"
+        android:gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/txtsickdata7"
+        android:clickable="true"
+        android:textSize="@dimen/h1"
+        android:text="@string/s7"
+        android:gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/txtsickdata8"
+        android:clickable="true"
+        android:textSize="@dimen/h1"
+        android:text="@string/s8"
+        android:gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/txtsickdata9"
+        android:clickable="true"
+        android:textSize="@dimen/h1"
+        android:text="@string/s9"
+        android:gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/txtsickdata10"
+        android:clickable="true"
+        android:textSize="@dimen/h1"
+        android:text="@string/s10"
+        android:gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
