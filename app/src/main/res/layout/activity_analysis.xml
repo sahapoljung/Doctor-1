@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AnalysisActivity">
+    tools:context=".AnalysisActivity"
+    android:background="#EBDDC3">
 
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#EBDDC3">
 
     <TextView
         android:gravity="center"
@@ -33,18 +35,26 @@
             android:layout_width="180dp"
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"
-            android:text="Yes" />
+            android:text="Yes"
+            android:background="#EBDDC3"/>
 
         <Button
             android:id="@+id/btnNo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="No" />
+            android:text="No"
+            android:background="#EBDDC3"/>
 
 
     </LinearLayout>
-
+    <Button
+        android:id="@+id/btnRs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text=""
+        android:background="#EBDDC3"/>
 
 </LinearLayout>
 
