@@ -14,22 +14,23 @@
     <string name="sick">ข้อมูลโรค</string>
     <string name="info">info</string>
 
-    <string name="s1">โรคที่ 1</string>
-    <string name="sd1">สาเหตุ
-เกิดจากเชื้อหวัด ซึ่งเป็นไวรัส (virus) มีอยู่มาก กว่า 200 ชนิดจากกลุ่มไวรัส 8 กลุ่มด้วยกัน กลุ่มไวรัส ที่สำคัญ ได้แก่ กลุ่มไวรัสไรโน (rhinovirus) ซึ่งมีมาก กว่า 100 ชนิด นอกนั้นก็มีกลุ่มไวรัสโคโรนา (coronavirus) กลุ่มไวรัสอะดีโน (adenovirus) กลุ่มอาร์เอสวี (respiratory syncytial virus/RSV) กลุ่มไวรัสพาราอินฟลูเอนซา (parainfluenza virus) กลุ่มเชื้อไวรัส ไข้หวัดใหญ่ (influenza virus) กลุ่มไวรัสเอนเทอโร (enterovirus) กลุ่มเชื้อเริ่ม (herpes simplex virus) เป็นต้น การเกิดโรคขึ้นในแต่ละครั้งจะเกิดจากเชื้อหวัด เพียงชนิดเดียว เมื่อเป็นแล้วร่างกายก็จะมีภูมิคุ้มกันต่อ เชื้อหวัดชนิดนั้น ในการเจ็บป่วยครั้งใหม่ก็จะเกิดจากเชื้อหวัดชนิดใหม่ หมุนเวียนเช่นนี้ไปเรื่อยๆ เชื้อหวัดมีอยู่ในน้ำมูก น้ำลาย และเสมหะของผู้ ป่วย ติดต่อโดยการหายใจสูดเอาฝอยละอองเสมหะที่ ผู้ป่วยไอหรือจามรด ภายในระยะไม่เกิน 1 เมตร ซึ่งจัด ว่าเป็นการแพร่กระจายทางละอองเสมหะที่มีขนาดใหญ่ (droplet transmission) นอกจากนี้ เชื้อหวัดยังอาจติดต่อโดยการสัมผัส กล่าวคือ เชื้อหวัดอาจติดที่มือของผู้ป่วย สิ่งของเครื่อง ใช้ (เช่น ผ้าเช็ดหน้า ผ้าเช็ดตัว แก้วน้ำ จาน ชาม ของเล่น หนังสือ โทรศัพท์ เป็นต้น) หรือสิ่งแวดล้อม เมื่อคน ปกติสัมผัสถูกมือของผู้ป่วยหรือสิ่งของเครื่องใช้ หรือ สิ่งแวดล้อมที่แปดเปื้อนเชื้อหวัด เชื้อหวัดก็จะติดมือ ของคนๆ นั้น และเมื่อใช้นิ้วมือขยี้ตาหรือแคะจมูก เชื้อ ก็จะเข้าสู่ร่างกายของคนๆนั้น จนกลายเป็นไข้หวัดได้
-</string>
-
-
-    <string name="s2">โรคที่ 2</string>
-    <string name="s3">โรคที่ 3</string>
-    <string name="s4">โรคที่ 4</string>
-    <string name="s5">โรคที่ 5</string>
-    <string name="s6">โรคที่ 6</string>
-    <string name="s7">โรคที่ 7</string>
-    <string name="s8">โรคที่ 8</string>
-    <string name="s9">โรคที่ 9</string>
-    <string name="s10">โรคที่ 10</string>
+    <string name="s1">ไข้หวัด</string>
+    <string name="s2">เวียนศีรษะ</string>
+    <string name="s3">ภูมิแพ้</string>
+    <string name="s4">ขาดวิตามิน</string>
+    <string name="s5">ไมเกรน</string>
+    <string name="s6">ท้องร่วง</string>
+    <string name="s7">อีสุกอีใส</string>
+    <string name="s8">อีดำอีแดง</string>
+    <string name="s9">ไมเกรน</string>
+    <string name="s10">สายตาผิดปกติ</string>
+    <string name="s11">หนังตาอักเสบ</string>
+    <string name="s12">ถุงน้ำตาอักเสบ</string>
+    <string name="s13">กุ้งยิง</string>
+    <string name="s14">ไซนัสอักเสบ</string>
+    <string name="s15">โรคขาดวิตามินเอ</string>
 
     <string name="ss1">กดที่นี่เพื่อตรวจโรค</string>
     <string name="ss2">ปวดศรีษะ</string>
+    <string name="title_activity_datasick">DatasickActivity</string>
 </resources>

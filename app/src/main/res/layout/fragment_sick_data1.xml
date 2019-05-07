@@ -12,6 +12,6 @@
         android:id="@+id/sss1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/sd1" />
+        android:text="5678111111111111111111111111111111111111111111111111" />
 
 </LinearLayout>

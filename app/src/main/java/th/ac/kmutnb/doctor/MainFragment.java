@@ -68,7 +68,7 @@ public class MainFragment extends Fragment {
     }
 
     private void loginControllar() {
-        Button button = getView().findViewById(R.id.btnLogin);
+        final Button button = getView().findViewById(R.id.btnLogin);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,21 +78,24 @@ public class MainFragment extends Fragment {
                 String user = userEditText.getText().toString().trim();
                 String passwoed = passwordEditText.getText().toString().trim();
                 String urlPHP = "https://www.androidthai.in.th/sam/getUserWhereUserSam.php";
+
                 boolean userAbool = true;
 
-                if (user.isEmpty()||passwoed.isEmpty()) {
-                    myAlert.normalDialog("Have Space","Please Fill All Ever Blank" );
+                if (user.isEmpty() || passwoed.isEmpty()) {
+                    myAlert.normalDialog("Have Space", "Please Fill All Ever Blank");
 
-                } else {
+                }
+                else {
                     try {
 
                         GetUserWhereUserThread getUserWhereUserThread = new GetUserWhereUserThread(getActivity());
                         getUserWhereUserThread.execute(user, urlPHP);
                         String json = getUserWhereUserThread.get();
                         Log.d("26JanV1", "json==>" + json);
-                        if (json.equals("null")) {
+                        if (json.equals("nulll")) {
                             myAlert.normalDialog("User False","No "+user+" In My Data" );
-                        } else {
+                        }
+                        else {
                             JSONArray jsonArray = new JSONArray(json);
                             JSONObject jsonObject = jsonArray.getJSONObject(0);
 
@@ -121,8 +124,6 @@ public class MainFragment extends Fragment {
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
-
-
                 }
 
             }

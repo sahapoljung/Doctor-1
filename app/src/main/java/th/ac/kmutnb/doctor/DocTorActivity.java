@@ -1,5 +1,6 @@
 package th.ac.kmutnb.doctor;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.DrawerLayout;
@@ -33,43 +34,82 @@ public class DocTorActivity extends AppCompatActivity {
         getUser();
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().add(R.id.contentDoctorFragment, new AboutMeFragment()).commit();
-            //getSupportFragmentManager().beginTransaction().add(R.id.mainFramement, new MainFragment()).commit();
-            //getSupportFragmentManager().beginTransaction().add(R.id.mainFramement, new MainFragment()).commit();
+            //getSupportFragmentManager().beginTransaction().add(R.id.FragmentMain, new MainFragment()).commit();
         }
 
-//        AboutMe controllor
+//        หน้าแรก
         aboutMeControllor();
-//        Analysis Controllor วินิจฉัย
+//       วินิจฉัย
         analysisControllor();
+
         //ข้อมูลโรค
-        DataSick();
+        DataSickControllor();
 
+        //ล็อคเอาท์
+        LogoutControllor();
 
-        Logout();
+        //ข้อมูลส่วนตัว
+        InfoControllor();
+
+        //ล็อคเอาท์
+        //LogoutControllor();
 
 
     }// Main Method
 
-    private void DataSick() {
+
+
+    private void InfoControllor() {
+        TextView textView = findViewById(R.id.txtInfo);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.contentDoctorFragment, new InfoFragment()).commit();
+                drawerLayout.closeDrawers();
+            }
+        });
+    }
+
+    private void DataSickControllor() {
         TextView textView = findViewById(R.id.txtdatasick);
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                getSupportFragmentManager().beginTransaction().replace(R.id.contentDoctorFragment, new DataSickFragment()).commit();
+                //getSupportFragmentManager().beginTransaction().replace(R.id.contentDoctorFragment, new DataSickFragment()).commit();
+               // drawerLayout.closeDrawers();
+                Intent intent = new Intent(DocTorActivity.this,DatasickActivity.class);
+                startActivity(intent);
                 drawerLayout.closeDrawers();
 
             }
         });
     }
 
-    private void Logout() {
+    private void LogoutControllor() {
         final TextView textView = findViewById(R.id.txtLogout);
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //getSupportFragmentManager().beginTransaction().replace(R.id.contentDoctorFragment, new AnalysisChooseFragment()).commit();
-                //getSupportFragmentManager().beginTransaction().replace(R.id.mainFramement, new MainFragment()).commit();
+                //getSupportFragmentManager().beginTransaction().replace(R.id.FragmentMain, new MainFragment()).commit();
+                //Intent intent = new Intent();
+                //intent.setClass(DocTorActivity.this,MainFragment.class);
+                //startActivity(intent);
+
+               // newActivityReminder.setClass(getActivity(),MainActivityReminder.class);
+               // newActivityReminder.putExtra("index","test");//ส่งค่าตัวหลังเป็น Value
+
+               // startActivity(newActivityReminder);
+
+
+
+//                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                startActivity(intent);
+//
+//                MainFragment mainFragment = new MainFragment();
+                //mainFragment.setArguments(getIntent().getExtras());
+
 
             }
         });
@@ -77,18 +117,17 @@ public class DocTorActivity extends AppCompatActivity {
   //
     private void analysisControllor() {
         TextView textView = findViewById(R.id.txtAnalysis);
-
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getSupportFragmentManager().beginTransaction().replace(R.id.contentDoctorFragment, new AnalysisChooseFragment()).commit();
-
+               // getSupportFragmentManager().beginTransaction().replace(R.id.contentDoctorFragment, new AnalysisChooseFragment()).commit();
+                Intent intent = new Intent(DocTorActivity.this, AnalysisActivity.class);
+                startActivity(intent);
                 drawerLayout.closeDrawers();
 
 
             }
         });
-
     }
 
     private void aboutMeControllor() {

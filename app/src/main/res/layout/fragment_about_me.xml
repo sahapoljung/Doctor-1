@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,41 +8,63 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/m1"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="Name and Surname"
-            android:textSize="@dimen/h1"
+            android:text=""
+            android:textSize="@dimen/h2"
             android:textStyle="bold" />
+
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="380dp"
+            android:layout_height="163dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/aboutme" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="ID 1234567890"
+            android:text=""
             android:textSize="@dimen/h2"
             android:textStyle="bold" />
 
         <TextView
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="Name and Surname2"
-            android:textSize="@dimen/h1"
-            android:textStyle="bold" />
+            android:text="วิเคราห์อาการป่วยและบอกวิธีรักษาได้ด้วยตนเอง โดยแอพพลิเคชั่นจะวิเคราห์จากการตอบคำถามเพื่อแสดงถึงความน่าจะเป็นในการรักษาโรคด้วยตนเองได้โดยไม่ต้องพบแพทย์ "
+            android:textSize="25dp"
+
+            android:textColor="#243982"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="ID 1234567890"
-            android:textSize="@dimen/h2"
-            android:textStyle="bold" />
+            android:text=""
+            android:textSize="50dp"
+            android:textStyle="bold"  />
+
+        <TextView
+
+            android:clickable="true"
+            android:id="@+id/txtAnalysisMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="กดที่นี่พื่อวินิจฉัย"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            android:textColor="#53857c"/>
 
 
     </LinearLayout>

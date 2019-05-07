@@ -54,6 +54,9 @@ public class AnalysisActivity extends AppCompatActivity implements View.OnClickL
         Button button2 = findViewById(R.id.btnNo);
         button2.setOnClickListener(this);
 
+        //Button button3 = findViewById(R.id.btnRs);
+      //  button3.setOnClickListener(this);
+
         if (in.equals("00")) {textView.setText("คุณปวดศรีษะหรือเวียนหัวใช่หรือไม่");}
         if (in.equals("000")) {textView.setText("คุณมีปัญหาเกี่ยวกับตาใช่หรือไม่่");}
         if (in.equals("0000")) {textView.setText("คุณไอใช่ไหม");}
@@ -70,7 +73,7 @@ public class AnalysisActivity extends AppCompatActivity implements View.OnClickL
         if (num.equals(f)) { six = num; in = "6"; }
         if (num.equals(g)) { six = num; in = "7"; }
 
-
+        sick1(textView, button1, button2);
         sick2(textView);
         sick3(textView);
         sick4(textView);
@@ -79,12 +82,14 @@ public class AnalysisActivity extends AppCompatActivity implements View.OnClickL
         sick7(textView);
 
 
-        sick1(textView, button1, button2);
+        //sick1(textView);
+       // button1.setText("");
+       // button2.setText("");
 
 
     }
 
-    private void sick1(TextView textView, Button button1, Button button2) {
+    private void sick1(TextView textView ,Button button1,Button button2) {
         if (in.equals("1") && six.equals("01")) {textView.setText("คุณมีไข้ร่วมกับน้ำมูกหรือไอใช่หรือไม่");}
         if (in.equals("11") && six.equals("01")) {textView.setText("ไอเสียงก้อง และหายใจเข้ามีเสียงฮึ้ด");}
         if (in.equals("110") && six.equals("01")) {textView.setText("ปวดหู หรือหูอื้อ");}
@@ -348,6 +353,16 @@ public class AnalysisActivity extends AppCompatActivity implements View.OnClickL
                     Log.d("26JanV1", "in at Anlysis ไรไร" + in);
 
                 break;
+//            case R.id.btnRs:
+//
+//
+//
+//
+//
+//
+//
+//                break;
+
         }
     }
 }

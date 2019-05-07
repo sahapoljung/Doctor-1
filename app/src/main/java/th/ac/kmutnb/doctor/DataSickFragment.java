@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
@@ -19,12 +20,12 @@ public class DataSickFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
-        TextView textView = getView().findViewById(R.id.txtsickdata1);
+       // RelativeLayout relativeLayout = getView().findViewById(R.id.rL1);
+        TextView textView = getView().findViewById(R.id.txtDatasick1);
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //getActivity().getSupportFragmentManager().beginTransaction().add(R.id.sss1, new SickData1Fragment()).commit();
+                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.sss1, new SickData1Fragment()).commit();
             }
         });
     }
