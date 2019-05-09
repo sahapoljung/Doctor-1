@@ -11,15 +11,17 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.CheckBox;
 import android.widget.TextView;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.concurrent.ExecutionException;
 
 public class DocTorActivity extends AppCompatActivity {
 
-    private String idString;
+    private String idString ,del=null;
     private String urlPHP = "https://www.androidthai.in.th/sam/getUserWhereIdSam.php";
     private String nameString , surnameString;
     private DrawerLayout drawerLayout;
@@ -31,7 +33,9 @@ public class DocTorActivity extends AppCompatActivity {
         setContentView(R.layout.activity_doc_tor);
 
 
-        getUser();
+
+            getUser();
+
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().add(R.id.contentDoctorFragment, new AboutMeFragment()).commit();
             //getSupportFragmentManager().beginTransaction().add(R.id.FragmentMain, new MainFragment()).commit();
@@ -46,7 +50,7 @@ public class DocTorActivity extends AppCompatActivity {
         DataSickControllor();
 
         //ล็อคเอาท์
-        LogoutControllor();
+       // LogoutControllor();
 
         //ข้อมูลส่วนตัว
         InfoControllor();
@@ -87,15 +91,25 @@ public class DocTorActivity extends AppCompatActivity {
     }
 
     private void LogoutControllor() {
+
         final TextView textView = findViewById(R.id.txtLogout);
         textView.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
+
                 //getSupportFragmentManager().beginTransaction().replace(R.id.contentDoctorFragment, new AnalysisChooseFragment()).commit();
                 //getSupportFragmentManager().beginTransaction().replace(R.id.FragmentMain, new MainFragment()).commit();
-                //Intent intent = new Intent();
-                //intent.setClass(DocTorActivity.this,MainFragment.class);
-                //startActivity(intent);
+
+
+
+
+
+                Intent intent = new Intent();
+                intent.setClass(DocTorActivity.this,MainActivity.class);
+                intent.putExtra("dey", del);
+                startActivity(intent);
+
 
                // newActivityReminder.setClass(getActivity(),MainActivityReminder.class);
                // newActivityReminder.putExtra("index","test");//ส่งค่าตัวหลังเป็น Value
@@ -121,6 +135,7 @@ public class DocTorActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                // getSupportFragmentManager().beginTransaction().replace(R.id.contentDoctorFragment, new AnalysisChooseFragment()).commit();
+
                 Intent intent = new Intent(DocTorActivity.this, AnalysisActivity.class);
                 startActivity(intent);
                 drawerLayout.closeDrawers();
@@ -166,25 +181,31 @@ public class DocTorActivity extends AppCompatActivity {
     }
 
     private void getUser() {
+
         idString = getIntent().getStringExtra("id");
         Log.d("26JanV1", "id Recive ==>" + idString);
 
-        try {
 
-            GetUserWhereIdThread getUserWhereIdThread = new GetUserWhereIdThread(DocTorActivity.this);
-            getUserWhereIdThread.execute(idString, urlPHP);
-            String json = getUserWhereIdThread.get();
-            Log.d("26JanV1", "json Doctor ==>" + json);
+            try {
 
-            JSONArray jsonArray = new JSONArray(json);
-            JSONObject jsonObject = jsonArray.getJSONObject(0);
-            nameString = jsonObject.getString("Name");
-            surnameString = jsonObject.getString("Surname");
-            createToobar();
+                GetUserWhereIdThread getUserWhereIdThread = new GetUserWhereIdThread(DocTorActivity.this);
+                getUserWhereIdThread.execute(idString, urlPHP);
+                String json = getUserWhereIdThread.get();
+                Log.d("26JanV1", "json Doctor ==>" + json);
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+                JSONArray jsonArray = new JSONArray(json);
+                JSONObject jsonObject = jsonArray.getJSONObject(0);
+                nameString = jsonObject.getString("Name");
+                surnameString = jsonObject.getString("Surname");
+                createToobar();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+
+
+
     }
 
     private void createToobar() {
@@ -198,7 +219,6 @@ public class DocTorActivity extends AppCompatActivity {
 
         drawerLayout = findViewById(R.id.drawerLayout);
         actionBarDrawerToggle = new ActionBarDrawerToggle(DocTorActivity.this,drawerLayout,R.string.open,R.string.close);
-
 
 
     }

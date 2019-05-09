@@ -1,6 +1,4 @@
 package th.ac.kmutnb.doctor;
-
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -15,7 +13,6 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
-
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -24,7 +21,7 @@ import org.json.JSONObject;
  * A simple {@link Fragment} subclass.
  */
 public class MainFragment extends Fragment {
-
+    private String dell;
 
     public MainFragment() {
         // Required empty public constructor
@@ -33,6 +30,9 @@ public class MainFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
+
+
 
 //        Resgister controller
         resgisterController();
