@@ -101,7 +101,7 @@ public class DocTorActivity extends AppCompatActivity {
                 //getSupportFragmentManager().beginTransaction().replace(R.id.contentDoctorFragment, new AnalysisChooseFragment()).commit();
                 //getSupportFragmentManager().beginTransaction().replace(R.id.FragmentMain, new MainFragment()).commit();
                 num = "1";
-                getUser();
+                //getUser();
 
                 Intent intent = new Intent(DocTorActivity.this, MainActivity.class);
                 intent.putExtra("index", index);

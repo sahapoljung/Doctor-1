@@ -41,7 +41,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="วิเคราห์อาการป่วยและบอกวิธีรักษาได้ด้วยตนเอง โดยแอพพลิเคชั่นจะวิเคราห์จากการตอบคำถามเพื่อแสดงถึงความน่าจะเป็นในการรักษาโรคด้วยตนเองได้โดยไม่ต้องพบแพทย์ "
+            android:text="วิเคราะห์อาการป่วยเบื้องต้นและบอกวิธีรักษาได้ด้วยตนเอง โดยแอพพลิเคชั่นจะวิเคราะห์จากการตอบคำถามเพื่อแสดงถึงความน่าจะเป็นในการรักษาโรคด้วยตนเองได้โดยไม่ต้องพบแพทย์ "
             android:textSize="25dp"
 
             android:textColor="#243982"/>
@@ -61,7 +61,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="กดที่นี่พื่อวินิจฉัย"
+            android:text="กดที่นี่เพื่อวินิจฉัย"
             android:textSize="24dp"
             android:textStyle="bold"
             android:textColor="#53857c"/>

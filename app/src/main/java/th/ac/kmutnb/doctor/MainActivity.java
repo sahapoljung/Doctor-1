@@ -20,12 +20,12 @@ public class MainActivity extends AppCompatActivity {
             // Do something else
         }
 //        String txt = getIntent().getExtras().getString("dey");
-
+        //num = getIntent().getExtras().getString("indix");
         Log.d("26JanV1", "num    " + num);
 
 //      Addfragment
         if (savedInstanceState == null) {
-
+            //MainFragment mainFragment = MainFragment.newInstance("5678",num);
             getSupportFragmentManager().beginTransaction().add(R.id.mainFramement, new MainFragment()).commit();
         }
 

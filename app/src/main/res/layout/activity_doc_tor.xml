@@ -67,7 +67,7 @@
                 android:layout_marginLeft="8dp"
                 android:textStyle="bold"
                 android:gravity="center_vertical"
-                android:text="About Me"
+                android:text="Home"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
@@ -147,7 +147,7 @@
                 android:layout_marginLeft="8dp"
                 android:textStyle="bold"
                 android:gravity="center_vertical"
-                android:text="Infomation"
+                android:text="Info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 

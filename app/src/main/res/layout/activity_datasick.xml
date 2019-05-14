@@ -44,6 +44,8 @@
                     android:text="" />
             </LinearLayout>
 
+
+            <!--1-->
             <RelativeLayout
 
                 android:layout_width="match_parent"
@@ -53,7 +55,7 @@
 
                 <TextView
                     android:id="@+id/txtDatasick1"
-                    android:layout_width="347dp"
+                    android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentLeft="true"
@@ -61,22 +63,22 @@
                     android:layout_alignParentBottom="true"
                     android:layout_marginStart="0dp"
                     android:layout_marginLeft="0dp"
-                    android:layout_marginTop="-15dp"
-                    android:layout_marginEnd="0dp"
-                    android:layout_marginRight="0dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="-64dp"
+                    android:layout_marginRight="-64dp"
                     android:layout_marginBottom="0dp"
-                    android:layout_toStartOf="@+id/imageView4"
-                    android:layout_toLeftOf="@+id/imageView4"
+                    android:layout_toStartOf="@+id/imageView1"
+                    android:layout_toLeftOf="@+id/imageView1"
                     android:background="#ffffff"
                     android:clickable="true"
                     android:gravity="center_vertical"
-                    android:text="  ไข้หวัด"
+                    android:text="  โรคไข้หวัด"
                     android:textColor="#53857c"
-                    android:textSize="@dimen/h1" />
+                    android:textSize="@dimen/s1" />
 
                 <ImageView
-                    android:id="@+id/imageView4"
-                    android:layout_width="64dp"
+                    android:id="@+id/imageView1"
+                    android:layout_width="63dp"
                     android:layout_height="match_parent"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
@@ -92,7 +94,7 @@
                 android:layout_weight="1"
                 android:background="#72000000" />
 
-
+<!--2-->
             <RelativeLayout
 
                 android:layout_width="match_parent"
@@ -119,9 +121,9 @@
                     android:background="#ffffff"
                     android:clickable="true"
                     android:gravity="center_vertical"
-                    android:text="  ท้องเดิน/อุจระร่วง"
+                    android:text="  โรคหวัดภูมิแพ้"
                     android:textColor="#53857c"
-                    android:textSize="@dimen/h1" />
+                    android:textSize="@dimen/s1" />
 
                 <ImageView
                     android:id="@+id/imageView2"
@@ -131,6 +133,349 @@
                     android:layout_alignParentRight="true"
                     android:layout_marginEnd="0dp"
                     android:layout_marginRight="0dp"
+                    android:src="@drawable/morethan" />
+            </RelativeLayout>
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:background="#72000000" />
+<!--3-->
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffffff"
+                android:clickable="true">
+
+                <TextView
+
+                    android:layout_width="347dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="-15dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:layout_toStartOf="@+id/imageView3"
+                    android:layout_toLeftOf="@+id/imageView3"
+                    android:background="#ffffff"
+                    android:clickable="true"
+                    android:gravity="center_vertical"
+                    android:text="  โรคบ้านหมุนจากการเปลี่ยนท่า"
+                    android:textColor="#53857c"
+                    android:textSize="@dimen/s1" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="64dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginRight="0dp"
+                    android:src="@drawable/morethan" />
+            </RelativeLayout>
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:background="#72000000" />
+
+           <!--4 -->
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffffff"
+                android:clickable="true">
+
+                <TextView
+
+                    android:layout_width="347dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="-15dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:layout_toStartOf="@+id/imageView4"
+                    android:layout_toLeftOf="@+id/imageView4"
+                    android:background="#ffffff"
+                    android:clickable="true"
+                    android:gravity="center_vertical"
+                    android:text="  โรคไมเกรน"
+                    android:textColor="#53857c"
+                    android:textSize="@dimen/s1" />
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="64dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginRight="0dp"
+                    android:src="@drawable/morethan" />
+            </RelativeLayout>
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:background="#72000000" />
+
+            <!--5-->
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffffff"
+                android:clickable="true">
+
+                <TextView
+
+                    android:layout_width="346dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="1dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_marginBottom="0dp"
+                    android:layout_toStartOf="@+id/imageView5"
+                    android:layout_toLeftOf="@+id/imageView5"
+                    android:background="#ffffff"
+                    android:clickable="true"
+                    android:gravity="center_vertical"
+                    android:text="  โรคขาดวิตามินเอ"
+                    android:textColor="#53857c"
+                    android:textSize="@dimen/s1" />
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="64dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginRight="0dp"
+                    android:src="@drawable/morethan" />
+            </RelativeLayout>
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:background="#72000000" />
+
+            <!--6-->
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffffff"
+                android:clickable="true">
+
+                <TextView
+
+                    android:layout_width="347dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="-15dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:layout_toStartOf="@+id/imageView6"
+                    android:layout_toLeftOf="@+id/imageView6"
+                    android:background="#ffffff"
+                    android:clickable="true"
+                    android:gravity="center_vertical"
+                    android:text="  โรคขาดวิตามินบี 1"
+                    android:textColor="#53857c"
+                    android:textSize="@dimen/s1" />
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="64dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginRight="0dp"
+                    android:src="@drawable/morethan" />
+            </RelativeLayout>
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:background="#72000000" />
+            <!--7-->
+
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffffff"
+                android:clickable="true">
+
+                <TextView
+
+                    android:layout_width="347dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="-15dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:layout_toStartOf="@+id/imageView7"
+                    android:layout_toLeftOf="@+id/imageView7"
+                    android:background="#ffffff"
+                    android:clickable="true"
+                    android:gravity="center_vertical"
+                    android:text="  โรคขาดวิตามินบี 2 "
+                    android:textColor="#53857c"
+                    android:textSize="@dimen/s1" />
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="64dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginRight="0dp"
+                    android:src="@drawable/morethan" />
+            </RelativeLayout>
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:background="#72000000" />
+
+          <!--8-->
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffffff"
+                android:clickable="true">
+
+                <TextView
+
+                    android:layout_width="347dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="-15dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:layout_toStartOf="@+id/imageView8"
+                    android:layout_toLeftOf="@+id/imageView8"
+                    android:background="#ffffff"
+                    android:clickable="true"
+                    android:gravity="center_vertical"
+                    android:text="  โรคขาดวิตามินซี"
+                    android:textColor="#53857c"
+                    android:textSize="@dimen/s1" />
+
+                <ImageView
+                    android:id="@+id/imageView8"
+                    android:layout_width="64dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginRight="0dp"
+                    android:src="@drawable/morethan" />
+            </RelativeLayout>
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:background="#72000000" />
+<!--9-->
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffffff"
+                android:clickable="true">
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="-15dp"
+                    android:layout_marginEnd="-64dp"
+                    android:layout_marginRight="-64dp"
+                    android:layout_marginBottom="0dp"
+                    android:layout_toStartOf="@+id/imageView9"
+                    android:layout_toLeftOf="@+id/imageView9"
+                    android:background="#ffffff"
+                    android:clickable="true"
+                    android:gravity="center_vertical"
+                    android:text="  โรคอุจจาระร่วง"
+                    android:textColor="#53857c"
+                    android:textSize="@dimen/s1" />
+
+                <ImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="64dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginBottom="0dp"
                     android:src="@drawable/morethan" />
             </RelativeLayout>
 
