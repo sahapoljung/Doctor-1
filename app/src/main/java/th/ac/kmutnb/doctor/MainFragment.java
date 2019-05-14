@@ -21,7 +21,7 @@ import org.json.JSONObject;
  * A simple {@link Fragment} subclass.
  */
 public class MainFragment extends Fragment {
-    private String dell;
+    private String dell,num;
 
     public MainFragment() {
         // Required empty public constructor
@@ -30,6 +30,10 @@ public class MainFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
+        //num = getActivity().getIntent().getExtras().getString("indix");
+       // Log.d("26JanV1", "num    " + num);
+
 
 
 
@@ -110,10 +114,11 @@ public class MainFragment extends Fragment {
 
                                 }
 
-                                Intent intent = new Intent(getActivity(),DocTorActivity.class);
-                                intent.putExtra("id", jsonObject.getString("id"));
-                                startActivity(intent);
-                                getActivity().finish();
+                                    Intent intent = new Intent(getActivity(), DocTorActivity.class);
+                                    intent.putExtra("id", jsonObject.getString("id"));
+                                    startActivity(intent);
+                                    getActivity().finish();
+
                             }
                             else {
                                 myAlert.normalDialog("Password False","Pleaase Try Again Password False" );

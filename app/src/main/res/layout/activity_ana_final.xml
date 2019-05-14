@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AnaFinalActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+
+            android:id="@+id/scrollView2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="30dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:background="@color/colorPrimary"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtset1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center"
+                        android:text="โอกาสที่จะเป็นโรค"
+                        android:textSize="@dimen/h1"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtdataroc"
+                        android:layout_width="353dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_margin="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:text=""
+                        android:textSize="@dimen/h1"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="374dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@color/colorPrimary"
+                    android:text="คำแนะนำเบื้องต้น"
+                    android:textSize="@dimen/h1" />
+
+                <TextView
+
+                    android:id="@+id/txtdatamol"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="5dp"
+                    android:text=""
+                    android:textSize="21sp" />
+
+                <TextView
+                    android:background="@color/colorPrimary"
+                    android:id="@+id/txtset4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:text="กดที่นี่เพื่อดูข้อมูลโรค"
+                    android:textSize="@dimen/h1"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:text=""
+                    android:textSize="50dp" />
+
+
+            </LinearLayout>
+
+
+        </ScrollView>
+    </FrameLayout>
+
+</android.support.constraint.ConstraintLayout>

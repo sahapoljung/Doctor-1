@@ -3,12 +3,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AnalysisFinalFragment">
+    tools:context=".AnalysisFinalFragment"
+    android:id="@+id/flfinol">
 
 
-    <TextView
+    <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical">
+
+        <TextView
+
+            android:background="@color/colorPrimary"
+            android:id="@+id/txtfinol"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="250dp"
+            android:gravity="center"
+            android:text="ควรไปพบแพทย์เพื่อวินิจฉัยอย่างละเอียด"
+            android:textSize="@dimen/m1"
+            android:textStyle="bold" />
+
+    </LinearLayout>
 
 </FrameLayout>

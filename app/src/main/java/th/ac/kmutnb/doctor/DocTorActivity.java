@@ -23,7 +23,7 @@ public class DocTorActivity extends AppCompatActivity {
 
     private String idString ,del=null;
     private String urlPHP = "https://www.androidthai.in.th/sam/getUserWhereIdSam.php";
-    private String nameString , surnameString;
+    private String nameString , surnameString,index="1",num;
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle actionBarDrawerToggle;
 
@@ -38,7 +38,7 @@ public class DocTorActivity extends AppCompatActivity {
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().add(R.id.contentDoctorFragment, new AboutMeFragment()).commit();
-            //getSupportFragmentManager().beginTransaction().add(R.id.FragmentMain, new MainFragment()).commit();
+
         }
 
 //        หน้าแรก
@@ -50,7 +50,7 @@ public class DocTorActivity extends AppCompatActivity {
         DataSickControllor();
 
         //ล็อคเอาท์
-       // LogoutControllor();
+        LogoutControllor();
 
         //ข้อมูลส่วนตัว
         InfoControllor();
@@ -100,15 +100,17 @@ public class DocTorActivity extends AppCompatActivity {
 
                 //getSupportFragmentManager().beginTransaction().replace(R.id.contentDoctorFragment, new AnalysisChooseFragment()).commit();
                 //getSupportFragmentManager().beginTransaction().replace(R.id.FragmentMain, new MainFragment()).commit();
+                num = "1";
+                getUser();
 
-
-
-
-
-                Intent intent = new Intent();
-                intent.setClass(DocTorActivity.this,MainActivity.class);
-                intent.putExtra("dey", del);
+                Intent intent = new Intent(DocTorActivity.this, MainActivity.class);
+                intent.putExtra("index", index);
                 startActivity(intent);
+                finish();
+//                getSupportFragmentManager().beginTransaction().replace(R.id.mainFramement, new MainFragment()).commit();
+//                finish();
+
+
 
 
                // newActivityReminder.setClass(getActivity(),MainActivityReminder.class);

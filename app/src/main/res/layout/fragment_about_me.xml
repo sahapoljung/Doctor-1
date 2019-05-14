@@ -55,7 +55,7 @@
             android:textStyle="bold"  />
 
         <TextView
-
+            android:background="@color/colorPrimary"
             android:clickable="true"
             android:id="@+id/txtAnalysisMain"
             android:layout_width="wrap_content"
