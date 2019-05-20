@@ -41,7 +41,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="วิเคราะห์อาการป่วยเบื้องต้นและบอกวิธีรักษาได้ด้วยตนเอง โดยแอพพลิเคชั่นจะวิเคราะห์จากการตอบคำถามเพื่อแสดงถึงความน่าจะเป็นในการรักษาโรคด้วยตนเองได้โดยไม่ต้องพบแพทย์ "
+            android:text="    วิเคราะห์อาการป่วยเบื้องต้นและบอกวิธีรักษาได้ด้วยตนเอง โดยแอพพลิเคชั่นจะวิเคราะห์จากการตอบคำถามเพื่อแสดงถึงความน่าจะเป็นในการรักษาโรคด้วยตนเองได้โดยไม่ต้องพบแพทย์ "
             android:textSize="25dp"
 
             android:textColor="#243982"/>
@@ -55,7 +55,7 @@
             android:textStyle="bold"  />
 
         <TextView
-            android:background="@color/colorPrimary"
+            android:background="@color/colorPrimaryy"
             android:clickable="true"
             android:id="@+id/txtAnalysisMain"
             android:layout_width="wrap_content"

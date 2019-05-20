@@ -24,24 +24,25 @@
                 android:orientation="vertical">
 
                 <LinearLayout
-                    android:background="@color/colorPrimary"
+                    android:background="@color/colorPrimaryy"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/txtset1"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginLeft="15dp"
+                        android:id="@+id/txtdataroc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="5dp"
                         android:gravity="center"
-                        android:text="โอกาสที่จะเป็นโรค"
+                        android:text=""
                         android:textSize="@dimen/h1"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/txtdataroc"
                         android:layout_width="353dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
@@ -49,7 +50,7 @@
                         android:layout_marginLeft="10dp"
                         android:gravity="center"
                         android:text=""
-                        android:textSize="@dimen/h1"
+                        android:textSize="10dp"
                         android:textStyle="bold" />
                 </LinearLayout>
 
@@ -59,7 +60,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginLeft="35dp"
                     android:layout_marginTop="40dp"
-                    android:background="@color/colorPrimary"
+                    android:background="@color/colorPrimaryy"
                     android:text="คำแนะนำเบื้องต้น"
                     android:textSize="@dimen/h1" />
 
@@ -76,9 +77,8 @@
                     android:textSize="21sp" />
 
                 <TextView
-                    android:background="@color/colorPrimary"
-                    android:id="@+id/txtset4"
-                    android:layout_width="match_parent"
+                    android:id="@+id/txtdatafinol1"
+                    android:layout_width="266dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_margin="10dp"
@@ -87,10 +87,42 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="16dp"
                     android:layout_marginRight="16dp"
+                    android:background="@color/colorPrimaryy"
                     android:clickable="true"
                     android:focusable="true"
                     android:gravity="center"
                     android:text="กดที่นี่เพื่อดูข้อมูลโรค"
+                    android:textSize="@dimen/h1"
+                    android:textStyle="bold" />
+
+                <TextView
+android:id="@+id/txtdatafinol3"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="5dp"
+                    android:text="ถ้าคุณต้องการดูข้อมูลรักษาอาการเบื้องต้น"
+                    android:textSize="@dimen/h2" />
+
+                <TextView
+                    android:id="@+id/txtdatafinol2"
+                    android:layout_width="234dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@color/colorPrimaryy"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:text="กดที่นี่เพื่อดูอาการ"
                     android:textSize="@dimen/h1"
                     android:textStyle="bold" />
 

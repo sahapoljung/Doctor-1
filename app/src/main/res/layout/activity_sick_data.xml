@@ -4,14 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".SickDataActivity">
 
-    <!--Content of Fragment-->
     <FrameLayout
-        android:screenOrientation="landscape"
-        android:configChanges="keyboardHidden|orientation|screenSize"
-        android:id="@+id/mainFramement"
+        android:id="@+id/flsickdata"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent">
 
+    </FrameLayout>
 </android.support.constraint.ConstraintLayout>

@@ -35,6 +35,19 @@ public class MainFragment extends Fragment {
        // Log.d("26JanV1", "num    " + num);
 
 
+        Intent intent = getActivity().getIntent();
+
+        if (intent.hasExtra("index")) {
+            num = getActivity().getIntent().getExtras().getString("index");
+//            SharedPreferences sharedPreferences = getActivity().getSharedPreferences("fake", Context.MODE_PRIVATE);
+//            SharedPreferences.Editor edit = sharedPreferences.edit();
+//            edit.clear().commit();
+
+           // getActivity().getSharedPreferences().editor().remove("key").apply();
+        } else {
+            // Do something else
+        }
+        Log.d("26JanV1", "num    " + num);
 
 
 
@@ -43,8 +56,8 @@ public class MainFragment extends Fragment {
 
 //        Login controllar
         loginControllar();
-
-
+//          ข้ามไป doctor
+        GotoDoctor();
 
 
     }//Main Method
@@ -113,13 +126,23 @@ public class MainFragment extends Fragment {
                                     editor.commit();
 
                                 }
+//                                    if (num.equals("1")){
+//                                        SharedPreferences settings = getActivity().getSharedPreferences("PreferencesName", Context.MODE_PRIVATE);
+//                                        settings.edit().clear().commit();
+//
+//
+//                                        Log.d("26JanV1", "json5555555" + json);
+//                                        Log.d("26JanV1", "num55555555" + num);
+//                                    }
 
-                                    Intent intent = new Intent(getActivity(), DocTorActivity.class);
-                                    intent.putExtra("id", jsonObject.getString("id"));
-                                    startActivity(intent);
-                                    getActivity().finish();
 
-                            }
+//                                    else {
+                                            Intent intent = new Intent(getActivity(), DocTorActivity.class);
+                                            intent.putExtra("id", jsonObject.getString("id"));
+                                            startActivity(intent);
+                                            getActivity().finish();
+//                                            }
+                                         }
                             else {
                                 myAlert.normalDialog("Password False","Pleaase Try Again Password False" );
                             }
@@ -143,6 +166,23 @@ public class MainFragment extends Fragment {
 
 //                Replace Fragment
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.mainFramement, new RegisterFragment()).addToBackStack(null).commit();
+            }
+        });
+    }
+
+
+    private void GotoDoctor() {
+        TextView textView = getView().findViewById(R.id.txtgodoc);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String string = " ";
+//                Replace Fragment
+                Intent intent = new Intent(getActivity(), DocTorActivity.class);
+                startActivity(intent);
+                intent.putExtra("id", string);
+                getActivity().finish();
+
             }
         });
     }

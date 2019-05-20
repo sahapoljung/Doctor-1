@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".DatasickActivity">
+    android:layout_height="match_parent">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -18,10 +16,10 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:orientation="vertical"
-                android:background="@color/colorPrimary"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent">
+                android:background="@color/colorPrimary"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/textView7"
@@ -64,8 +62,8 @@
                     android:layout_marginStart="0dp"
                     android:layout_marginLeft="0dp"
                     android:layout_marginTop="2dp"
-                    android:layout_marginEnd="-64dp"
-                    android:layout_marginRight="-64dp"
+                    android:layout_marginEnd="-62dp"
+                    android:layout_marginRight="-62dp"
                     android:layout_marginBottom="0dp"
                     android:layout_toStartOf="@+id/imageView1"
                     android:layout_toLeftOf="@+id/imageView1"
@@ -94,7 +92,7 @@
                 android:layout_weight="1"
                 android:background="#72000000" />
 
-<!--2-->
+            <!--2-->
             <RelativeLayout
 
                 android:layout_width="match_parent"
@@ -104,7 +102,7 @@
 
                 <TextView
                     android:id="@+id/txtDatasick2"
-                    android:layout_width="347dp"
+                    android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentLeft="true"
@@ -113,8 +111,8 @@
                     android:layout_marginStart="0dp"
                     android:layout_marginLeft="0dp"
                     android:layout_marginTop="-15dp"
-                    android:layout_marginEnd="0dp"
-                    android:layout_marginRight="0dp"
+                    android:layout_marginEnd="-64dp"
+                    android:layout_marginRight="-64dp"
                     android:layout_marginBottom="0dp"
                     android:layout_toStartOf="@+id/imageView2"
                     android:layout_toLeftOf="@+id/imageView2"
@@ -142,7 +140,7 @@
                 android:layout_height="1dp"
                 android:layout_weight="1"
                 android:background="#72000000" />
-<!--3-->
+            <!--3-->
             <RelativeLayout
 
                 android:layout_width="match_parent"
@@ -152,7 +150,7 @@
 
                 <TextView
 
-                    android:layout_width="347dp"
+                    android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentLeft="true"
@@ -161,8 +159,8 @@
                     android:layout_marginStart="0dp"
                     android:layout_marginLeft="0dp"
                     android:layout_marginTop="-15dp"
-                    android:layout_marginEnd="0dp"
-                    android:layout_marginRight="0dp"
+                    android:layout_marginEnd="-64dp"
+                    android:layout_marginRight="-64dp"
                     android:layout_marginBottom="0dp"
                     android:layout_toStartOf="@+id/imageView3"
                     android:layout_toLeftOf="@+id/imageView3"
@@ -191,7 +189,7 @@
                 android:layout_weight="1"
                 android:background="#72000000" />
 
-           <!--4 -->
+            <!--4 -->
             <RelativeLayout
 
                 android:layout_width="match_parent"
@@ -201,7 +199,7 @@
 
                 <TextView
 
-                    android:layout_width="347dp"
+                    android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentLeft="true"
@@ -210,8 +208,8 @@
                     android:layout_marginStart="0dp"
                     android:layout_marginLeft="0dp"
                     android:layout_marginTop="-15dp"
-                    android:layout_marginEnd="0dp"
-                    android:layout_marginRight="0dp"
+                    android:layout_marginEnd="-64dp"
+                    android:layout_marginRight="-64dp"
                     android:layout_marginBottom="0dp"
                     android:layout_toStartOf="@+id/imageView4"
                     android:layout_toLeftOf="@+id/imageView4"
@@ -250,7 +248,7 @@
 
                 <TextView
 
-                    android:layout_width="346dp"
+                    android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentLeft="true"
@@ -259,8 +257,8 @@
                     android:layout_marginStart="0dp"
                     android:layout_marginLeft="0dp"
                     android:layout_marginTop="2dp"
-                    android:layout_marginEnd="1dp"
-                    android:layout_marginRight="1dp"
+                    android:layout_marginEnd="-64dp"
+                    android:layout_marginRight="-64dp"
                     android:layout_marginBottom="0dp"
                     android:layout_toStartOf="@+id/imageView5"
                     android:layout_toLeftOf="@+id/imageView5"
@@ -299,7 +297,7 @@
 
                 <TextView
 
-                    android:layout_width="347dp"
+                    android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentLeft="true"
@@ -308,8 +306,8 @@
                     android:layout_marginStart="0dp"
                     android:layout_marginLeft="0dp"
                     android:layout_marginTop="-15dp"
-                    android:layout_marginEnd="0dp"
-                    android:layout_marginRight="0dp"
+                    android:layout_marginEnd="-64dp"
+                    android:layout_marginRight="-64dp"
                     android:layout_marginBottom="0dp"
                     android:layout_toStartOf="@+id/imageView6"
                     android:layout_toLeftOf="@+id/imageView6"
@@ -348,7 +346,7 @@
 
                 <TextView
 
-                    android:layout_width="347dp"
+                    android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentLeft="true"
@@ -357,8 +355,8 @@
                     android:layout_marginStart="0dp"
                     android:layout_marginLeft="0dp"
                     android:layout_marginTop="-15dp"
-                    android:layout_marginEnd="0dp"
-                    android:layout_marginRight="0dp"
+                    android:layout_marginEnd="-64dp"
+                    android:layout_marginRight="-64dp"
                     android:layout_marginBottom="0dp"
                     android:layout_toStartOf="@+id/imageView7"
                     android:layout_toLeftOf="@+id/imageView7"
@@ -387,7 +385,7 @@
                 android:layout_weight="1"
                 android:background="#72000000" />
 
-          <!--8-->
+            <!--8-->
             <RelativeLayout
 
                 android:layout_width="match_parent"
@@ -397,7 +395,7 @@
 
                 <TextView
 
-                    android:layout_width="347dp"
+                    android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentLeft="true"
@@ -406,8 +404,8 @@
                     android:layout_marginStart="0dp"
                     android:layout_marginLeft="0dp"
                     android:layout_marginTop="-15dp"
-                    android:layout_marginEnd="0dp"
-                    android:layout_marginRight="0dp"
+                    android:layout_marginEnd="-64dp"
+                    android:layout_marginRight="-64dp"
                     android:layout_marginBottom="0dp"
                     android:layout_toStartOf="@+id/imageView8"
                     android:layout_toLeftOf="@+id/imageView8"
@@ -435,7 +433,7 @@
                 android:layout_height="1dp"
                 android:layout_weight="1"
                 android:background="#72000000" />
-<!--9-->
+            <!--9-->
             <RelativeLayout
 
                 android:layout_width="match_parent"
@@ -488,5 +486,4 @@
 
         </LinearLayout>
     </ScrollView>
-
-</android.support.constraint.ConstraintLayout>
+</FrameLayout>

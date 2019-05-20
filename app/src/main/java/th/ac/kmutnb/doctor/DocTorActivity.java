@@ -14,10 +14,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.util.concurrent.ExecutionException;
 
 public class DocTorActivity extends AppCompatActivity {
 
@@ -54,7 +51,8 @@ public class DocTorActivity extends AppCompatActivity {
 
         //ข้อมูลส่วนตัว
         InfoControllor();
-
+        //ข้อมูลอาการ
+        sickdataControllor();
         //ล็อคเอาท์
         //LogoutControllor();
 
@@ -82,7 +80,7 @@ public class DocTorActivity extends AppCompatActivity {
 
                 //getSupportFragmentManager().beginTransaction().replace(R.id.contentDoctorFragment, new DataSickFragment()).commit();
                // drawerLayout.closeDrawers();
-                Intent intent = new Intent(DocTorActivity.this,DatasickActivity.class);
+                Intent intent = new Intent(DocTorActivity.this, DatasickMainActivity.class);
                 startActivity(intent);
                 drawerLayout.closeDrawers();
 
@@ -104,7 +102,7 @@ public class DocTorActivity extends AppCompatActivity {
                 //getUser();
 
                 Intent intent = new Intent(DocTorActivity.this, MainActivity.class);
-                intent.putExtra("index", index);
+                intent.putExtra("index", num);
                 startActivity(intent);
                 finish();
 //                getSupportFragmentManager().beginTransaction().replace(R.id.mainFramement, new MainFragment()).commit();
@@ -130,7 +128,21 @@ public class DocTorActivity extends AppCompatActivity {
             }
         });
     }
-  //
+    private void sickdataControllor() {
+        TextView textView = findViewById(R.id.txtsickdata);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // getSupportFragmentManager().beginTransaction().replace(R.id.contentDoctorFragment, new AnalysisChooseFragment()).commit();
+
+                Intent intent = new Intent(DocTorActivity.this, SickDataActivity.class);
+                startActivity(intent);
+                drawerLayout.closeDrawers();
+
+
+            }
+        });
+    }
     private void analysisControllor() {
         TextView textView = findViewById(R.id.txtAnalysis);
         textView.setOnClickListener(new View.OnClickListener() {
@@ -184,10 +196,10 @@ public class DocTorActivity extends AppCompatActivity {
 
     private void getUser() {
 
-        idString = getIntent().getStringExtra("id");
-        Log.d("26JanV1", "id Recive ==>" + idString);
-
-
+        Intent intent = getIntent();
+        if (intent.hasExtra("id")) {
+            idString = getIntent().getStringExtra("id");
+            Log.d("26JanV1", "id Recive ==>" + idString);
             try {
 
                 GetUserWhereIdThread getUserWhereIdThread = new GetUserWhereIdThread(DocTorActivity.this);
@@ -204,6 +216,35 @@ public class DocTorActivity extends AppCompatActivity {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+
+        } else {
+
+
+            nameString = " ";
+            surnameString =" ";
+            createToobar();
+            // Do something else
+        }
+//        idString = getIntent().getStringExtra("id");
+//        Log.d("26JanV1", "id Recive ==>" + idString);
+//
+//
+//            try {
+//
+//                GetUserWhereIdThread getUserWhereIdThread = new GetUserWhereIdThread(DocTorActivity.this);
+//                getUserWhereIdThread.execute(idString, urlPHP);
+//                String json = getUserWhereIdThread.get();
+//                Log.d("26JanV1", "json Doctor ==>" + json);
+//
+//                JSONArray jsonArray = new JSONArray(json);
+//                JSONObject jsonObject = jsonArray.getJSONObject(0);
+//                nameString = jsonObject.getString("Name");
+//                surnameString = jsonObject.getString("Surname");
+//                createToobar();
+//
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
 
 
 
