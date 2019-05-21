@@ -1,48 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal">
+    <ScrollView
+        android:background="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/txt_title"
-        android:layout_width="379dp"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:gravity="center_vertical"
-        android:text="  text"
-        android:textColor="#53857c"
-        android:textSize="@dimen/s1" />
 
-    <LinearLayout
-        android:layout_width="25dp"
-        android:layout_height="23dp"
-        android:orientation="vertical">
+        <!--// ข้างบน-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="6dp"
-            android:text=" "
-            android:textSize="@dimen/s1" />
 
-        <ImageView
-            android:id="@+id/imageView11"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginEnd="0dp"
-            android:layout_marginRight="0dp"
-            android:src="@drawable/morethan" />
-    </LinearLayout>
+        <!--เริ่ม-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <TextView
-        android:layout_width="28dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="12dp"
-        android:text=" "
-        android:textSize="@dimen/s1"
-        android:textStyle="bold" />
-</LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <!--ข้อคววามหลักก่อนกระจาย-->
+                <TextView
+                    android:id="@+id/txtBmain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:text=""
+                    android:textSize="@dimen/h1"
+                    android:textStyle="bold" />
+                <!--รูปลูกศรขึ้น-ลง-->
+                <ImageView
+                    android:id="@+id/imagesA"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/whileee" />
+
+                <TextView
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="@dimen/h1"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            <!--ข้อความในเนื้อหาที่แตกลงมา-->
+            <TextView
+                android:id="@+id/txtCmain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:text="" />
+
+            <ImageView
+                android:id="@+id/imagesB"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:src="@drawable/whileee" />
+        </LinearLayout>
+
+
+        <!--สิ้นสุด-->
+
+
+
+    </ScrollView>
+
+</FrameLayout>

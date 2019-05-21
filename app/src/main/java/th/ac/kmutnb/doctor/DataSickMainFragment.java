@@ -2,9 +2,13 @@ package th.ac.kmutnb.doctor;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,6 +42,7 @@ public class DataSickMainFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view =inflater.inflate(R.layout.fragment_data_sick_main, container, false);
+
         loadList = (ListView) view.findViewById(R.id.lvdatasick);
         arrayList = new ArrayList<>();
         String[] string = {"โรคไข้หวัด", "หวัดภูมิแพ้", "บ้านหมุนจากการเปลี่ยนท่า","ไมเกรน","โรคขาดวิตามินเอ","โรคขาดวิตามินบี 1","โรคขาดวิตามินบี 2","โรคขาดวิตามินซี"};
@@ -50,8 +55,19 @@ public class DataSickMainFragment extends Fragment {
 
         loadList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
 
+                String s= String.valueOf(i);
+                Log.d("26JanV1", "position sickdata ==>  " + s);
+                Bundle bundle = new Bundle();
+                bundle.putString("num", s);
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+                Datasick1Fragment datasick1Fragment = new Datasick1Fragment();
+                datasick1Fragment.setArguments(bundle);
+                fragmentTransaction.replace(R.id.fldata, datasick1Fragment);
+                fragmentTransaction.commit();
                       //  SparseBooleanArray checkedItemPositions = loadList.getCheckedItemPositions();
                       //  int itemCount = adapter.getCount();
                         //checkedItemPositions.clear();
