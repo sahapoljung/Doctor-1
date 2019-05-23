@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -24,10 +25,10 @@ import android.widget.Spinner;
  */
 public class RegisterFragment extends Fragment {
 
-//Explicit
+    //Explicit
     private String nameString ,surnameString , genderString, heightString, weightString,ageString, userString , passwordString ;
 
-    private boolean genderBoolean = true, heightABoolean = true , weightABoolean = true;
+    private boolean genderBoolean = true, heightABoolean = true , weightABoolean = true , ageABoolena = true;
 
     public RegisterFragment() {
         // Required empty public constructor
@@ -65,6 +66,7 @@ public class RegisterFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 heightString = heightStrings[position];
+
                 if (position == 0) {
                     heightABoolean = true;
 
@@ -79,6 +81,50 @@ public class RegisterFragment extends Fragment {
             }
         });
 
+
+        //      about weight
+        Spinner weightspinner = getView().findViewById(R.id.spnWight);
+        final String[] weightStrings = {"Pleass Choose weight", "0-40", "41-60", "61-80", "Over 80"};
+        ArrayAdapter<String> weightStringArrayAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, weightStrings);
+        weightspinner.setAdapter(weightStringArrayAdapter);
+        weightspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                weightString = weightStrings[position];
+                if (position == 0) {
+                    weightABoolean = true;
+
+                } else {
+                    weightABoolean = false;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+//          about age
+        Spinner agespinner = getView().findViewById(R.id.spnAge);
+        final String[] ageStrings = {"Pleass Choose age", "1-10", "11-20", "21-30", "31-40","41-50","51-60","Over 60"};
+        ArrayAdapter<String> ageStringArrayAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, ageStrings);
+        agespinner.setAdapter(ageStringArrayAdapter);
+        agespinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                ageString = ageStrings[position];
+                if (position == 0) {
+                    ageABoolena = true;
+                } else {
+                    ageABoolena = false;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
     } //Main Method
 
@@ -105,11 +151,17 @@ public class RegisterFragment extends Fragment {
 
         if(item.getItemId() == R.id.itemUpload) {
             checkValue();
+
+
+            Log.d("26JanV1", "heightStrings    " + nameString +surnameString + genderString+ heightString+ weightString+ageString+ userString + passwordString  );
             return true;
         }
+
+
         return super.onOptionsItemSelected(item);
     }
-// ทั้งหมดสำหรับหารเช็คว่าใส่ครบทุกช่องหรือไม่
+
+    // ทั้งหมดสำหรับหารเช็คว่าใส่ครบทุกช่องหรือไม่
     private void checkValue() {
 
 //        Get Value From EditTxet
@@ -127,7 +179,7 @@ public class RegisterFragment extends Fragment {
         MyAlert myAlert = new MyAlert(getActivity());
 
 
-//  เช็คความว่างเปล่า gender ,height ,weigt ,age
+//  เช็คความว่างเปล่า gender ,height ,weight ,age
 
         if (nameString.isEmpty() || surnameString.isEmpty() || userString.isEmpty() || passwordString.isEmpty()) {
 //            Have Space
@@ -139,7 +191,11 @@ public class RegisterFragment extends Fragment {
         } else if (heightABoolean) {
             myAlert.normalDialog("Non Choose Height", "Please Choose Height");
 
+        } else if (weightABoolean) {
+            myAlert.normalDialog("Non Choose Weight", "Please Choose Weight");
 
+        } else if (ageABoolena) {
+            myAlert.normalDialog("Non Choose Age", "Please Choose Age");
         }
     }
 

@@ -116,8 +116,8 @@
                 <ImageView
                     android:id="@+id/imagesB1"
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:src="@drawable/whileee" />
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/whileee" />
             </LinearLayout>
             <TextView
                 android:id="@+id/txtcolked1"
@@ -180,8 +180,8 @@
                 <ImageView
                     android:id="@+id/imagesB2"
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:src="@drawable/whileee" />
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/whileee" />
             </LinearLayout>
             <TextView
                 android:id="@+id/txtcolked2"
@@ -244,8 +244,8 @@
                 <ImageView
                     android:id="@+id/imagesB3"
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:src="@drawable/whileee" />
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/whileee" />
             </LinearLayout>
             <TextView
                 android:id="@+id/txtcolked3"
@@ -308,8 +308,8 @@
                 <ImageView
                     android:id="@+id/imagesB4"
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:src="@drawable/whileee" />
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/whileee" />
             </LinearLayout>
             <TextView
                 android:id="@+id/txtcolked4"
@@ -372,8 +372,8 @@
                 <ImageView
                     android:id="@+id/imagesB5"
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:src="@drawable/whileee" />
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/whileee" />
             </LinearLayout>
             <TextView
                 android:id="@+id/txtcolked5"
@@ -395,7 +395,7 @@
                     android:orientation="horizontal">
                     <!--ข้อคววามหลักก่อนกระจาย-->
                     <TextView
-                        android:layout_marginTop="15dp"
+                        android:layout_marginTop="25dp"
                         android:id="@+id/txtBmain6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -436,8 +436,8 @@
                 <ImageView
                     android:id="@+id/imagesB6"
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:src="@drawable/whileee" />
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/whileee" />
             </LinearLayout>
             <TextView
                 android:id="@+id/txtcolked6"
@@ -501,7 +501,7 @@
                     android:id="@+id/imagesB7"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:src="@drawable/whileee" />
+                    android:background="@drawable/whileee" />
             </LinearLayout>
             <TextView
                 android:id="@+id/txtcolked7"
@@ -565,7 +565,7 @@
                     android:id="@+id/imagesB8"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:src="@drawable/whileee" />
+                    android:background="@drawable/whileee" />
             </LinearLayout>
             <TextView
                 android:id="@+id/txtcolked8"

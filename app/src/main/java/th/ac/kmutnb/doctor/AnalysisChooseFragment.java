@@ -53,20 +53,19 @@ public class AnalysisChooseFragment extends Fragment implements View.OnClickList
         Button button2 = getView().findViewById(R.id.btnNo);
         button2.setOnClickListener(this);
 
-       // qImageView.setBackgroundResource(R.drawable.g6_1);
         //3&4
         if (in.equals("00")) {textView.setText("คุณปวดศรีษะ หรือเวียนหัวใช่หรือไม่");}//3&4
         //5
         if (in.equals("000")) {textView.setText("คุณมีอาการเกี่ยวกับการมองเห็นใช่หรือไม่");}//5
         //6
-        if (in.equals("0000")) {textView.setText("คุณมีอาการชาทั้งปลายมือและปลายเท้า อาจรู้สึกแปล๊บ ๆ ร่วมด้วย ใช่หรือไม่");}//6
+        if (in.equals("0000")) {textView.setText("คุณมีอาการเจ็บปวด ปวดแสบ และขัดขณะปัสสาวะ โดยเฉพาะตอนปัสสาวะสุด ร่วมด้วย ใช่หรือไม่");}//6
         //7
-        if (in.equals("00000")) {textView.setText("คุณเป็นแผลหรือรอยแตกที่มุมปากทั้งสองข้างใช่หรือไม่");qImageView.setBackgroundResource(R.drawable.g7_1);}
+        if (in.equals("00000")) {textView.setText("คุณมีอาการปวดท้อง ปวดจุก แสบ แน่นบริเวณเหนือสะดือกลางท้องหรือบริเวณลิ้นปี่ ใช่หรือไม่");qImageView.setBackgroundResource(R.drawable.g7_1);}
         //8
         if (in.equals("000000")) {textView.setText("คุณมีอาการเหงือกบวมแดง ใช่หรือไม่");qImageView.setBackgroundResource(R.drawable.g8_1);}
         //9
         if (in.equals("0000000")) {textView.setText("คุณมีอาการถ่ายเป็นน้ำหรือถ่ายเหลวมากกว่าวันละ 3 ครั้งใช่หรือไม่");qImageView.setBackgroundResource(R.drawable.whileee);}
-
+//      หน้าสุดท้ายที่ให้เลือกไปที่อาการต่อ
         if (in.equals("00000000")) {textView.setText("ระบบไม่สามารถวิเคราะห์อาการที่คุณเป็นได้");
             textView1.setGravity(1);
             textView1.setText("* ถ้าคุณต้องการดูอาการเพื่อดูแล\n"+ "รักษาเบื้องต้นกด\n"+" ' Yes ' ถ้าไม่กด ' No '"); }
@@ -242,7 +241,7 @@ public class AnalysisChooseFragment extends Fragment implements View.OnClickList
         if (in.equals("11111")||in.equals("10111")||in.equals("11011")||in.equals("10011")||in.equals("11101")||in.equals("10101")||in.equals("11001")||in.equals("10001")
                 ||in.equals("11110")||in.equals("10110")||in.equals("11010")||in.equals("10010")||in.equals("11100")||in.equals("10100")||in.equals("11000")||in.equals("10000")){
             textView1.setText("");
-//                textView.setText("โรคขาดวิตามินเอ หรือโรคเกล็ดกระดี่ขึ้นตา");
+//
             for (int i = 0; i < in.length(); i++) { if (in.charAt(i) == someChar) { count++; } }
             if (count == 1||count==2) {datanum  = "1"; }
             if (count == 3||count==4) { datanum = "2"; }
@@ -253,43 +252,71 @@ public class AnalysisChooseFragment extends Fragment implements View.OnClickList
 
     }
 //              6
-    private void sick4(TextView textView,TextView textView1, ImageView qImageView ){
+    private void sick4(TextView textView,TextView textView1, ImageView qImageView ) {
 
         char someChar = '1';
         int count = 0;
-        if (in.equals("1")) { textView.setText("คุณมีอาการกล้ามเนื้อแขนและขาไม่มีกำลัง ร่วมด้วยใช่หรือไม่"); }
-        if (in.equals("11")||in.equals("10")) {textView.setText(" อ่อนเพลีย เหนื่อยง่าย");}
-        if (in.equals("111")||in.equals("101")||in.equals("110")||in.equals("100")){
-            //            textView.setText("โรคขาดวิตามินบี 1 หรือโรคเหน็บชา");
-            for (int i = 0; i < in.length(); i++) { if (in.charAt(i) == someChar) { count++; } }
-            if (count == 1) {datanum  = "1";}
-            if (count == 2) {datanum = "2";}
-            if (count == 3) { datanum = "3";}
-            data = "โรคขาดวิตามินบี 1 หรือโรคเหน็บชา";
+        if (in.equals("1")) {
+            textView.setText("คุณมีอาการเจ็บปวดท้องน้อย (ใกล้กระดูกหัวหน่าว) ใช่หรือไม่");
+            qImageView.setBackgroundResource(R.drawable.g6_1);
+        }
+        if (in.equals("11") || in.equals("10")) {
+            textView.setText("ภายในหนึ่งวันคุณปัสสาวะบ่อย มากกว่า 10 ครั้งต่อวัน แต่ครั้งละออกแบบกะปริบกะปรอย และคล้ายถ่ายปัสสาวะไม่สุด ใช่หรือไม่");
+            qImageView.setBackgroundResource(R.drawable.whileee);
+        }
+
+        if (in.equals("111") || in.equals("101") || in.equals("110") || in.equals("100")) {
+            textView.setText("ปัสสาวะของคุณมีสีเข้ม ขุ่น หรือมีกลิ่นเหม็นผิดปกติ ใช่หรือไม่");
+        }
+        if (in.equals("1111") || in.equals("1011") || in.equals("1101") || in.equals("1001") || in.equals("1110") || in.equals("1010") || in.equals("1100") || in.equals("1000")){
+
+            for (int i = 0; i < in.length(); i++) {
+                if (in.charAt(i) == someChar) {
+                    count++;
+                }
+            }
+            if (count == 1) {
+                datanum = "1";
+            }
+            if (count == 2||count == 3) {
+                datanum = "2";
+            }
+            if (count == 4) {
+                datanum = "3";
+            }
+            data = "โรคกระเพาะปัสสาวะอักเสบ";
             SetTxt();
 
-        }
+    }
+
+
     }
 //              7
     private void sick5(TextView textView,TextView textView1, ImageView qImageView ){
         char someChar = '1';
         int count = 0;
-        if (in.equals("1")) { textView.setText("คุณมีเกล็ดใสเล็ก ๆ ที่ซอกจมูกใช่หรือไม่");
+        if (in.equals("1")) { textView.setText("คุณปวดแบบเป็น ๆ หาย ๆ มาไม่น้อยกว่าหนึ่งเดือน ใช่หรือไม่");
             qImageView.setBackgroundResource(R.drawable.whileee);}
-        if (in.equals("11")||in.equals("10")) { textView.setText("คุณมีอาการลิ้นมีสีแดงกว่าปกติและเจ็บ ใช่หรือไม่");
-            qImageView.setBackgroundResource(R.drawable.g7_2); }
-        if (in.equals("111")||in.equals("101")||in.equals("110")||in.equals("100")) { textView.setText("คุณมีแผลที่ผนังภายในปากรู้สึกคันหรือปวดแสบปวดร้อนที่ตา ใช่หรือไม่");
-            qImageView.setBackgroundResource(R.drawable.whileee);}
+        if (in.equals("11")||in.equals("10")) { textView.setText("คุณปวดท้อง ขณะที่เกี่ยวข้องกับมื้ออาหาร เช่น ปวดขณะหิวหรืออิ่มแต่เป็นการปวดแบบทนได้ ใช่หรือไม่"); }
+        if (in.equals("111")||in.equals("101")||in.equals("110")||in.equals("100")) { textView.setText("คุณมีอาการท้องเฟ้อ อิ่มง่าย จุกหน้าอกแน่นท้อง เรอบ่อย อาหารไม่ย่อย และรู้สึกคลื่นไส้หลังการรับประทานอาหารไม่มีความอยากอาหาร ใช่หรือไม่"); }
+
         if (in.equals("1111")||in.equals("1011")||in.equals("1101")||in.equals("1001")||in.equals("1110")||in.equals("1010")||in.equals("1100")||in.equals("1000")) {
-//            textView.setText("โรคขาดวิตามินบี 2 หรือโรคปากนกกระจอก");
+            textView.setText("คุณมีอาการหน้าท้องแข็ง และกดที่หน้าท้องแล้วรู้สึกเจ็บ ใช่หรือไม่");
+        }
+
+        if (in.equals("11111")||in.equals("10111")||in.equals("11011")||in.equals("10011")||in.equals("11101")||in.equals("10101")||in.equals("11001")||in.equals("10001")
+             ||in.equals("11110")||in.equals("10110")||in.equals("11010")||in.equals("10010")||in.equals("11100")||in.equals("10100")||in.equals("11000")||in.equals("10000")) {
+
             for (int i = 0; i < in.length(); i++) { if (in.charAt(i) == someChar) { count++; } }
-            if (count == 1) { datanum = "1";  }
-            if (count == 2||count==3) { datanum = "2"; }
-            if (count == 4) { datanum = "3"; }
-            data = "โรคขาดวิตามินบี 2 หรือโรคปากนกกระจอก";
+            if (count == 1||count == 2) { datanum = "1";  }
+            if (count == 3) { datanum = "2"; }
+            if (count == 4||count==5) { datanum = "3"; }
+            data = "โรคกระเพาะอักเสบ";
             SetTxt();
         }
     }
+
+
 //              8
 
     private void sick6(TextView textView,TextView textView1, ImageView qImageView ){

@@ -39,11 +39,10 @@ public class MainFragment extends Fragment {
 
         if (intent.hasExtra("index")) {
             num = getActivity().getIntent().getExtras().getString("index");
-//            SharedPreferences sharedPreferences = getActivity().getSharedPreferences("fake", Context.MODE_PRIVATE);
-//            SharedPreferences.Editor edit = sharedPreferences.edit();
-//            edit.clear().commit();
 
-           // getActivity().getSharedPreferences().editor().remove("key").apply();
+            SharedPreferences sharedPreferences = getActivity().getSharedPreferences("User", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.clear().commit();
         } else {
             // Do something else
         }
@@ -59,6 +58,14 @@ public class MainFragment extends Fragment {
 //          ข้ามไป doctor
         GotoDoctor();
 
+//        if (num.equals("1")){
+//                                        SharedPreferences settings = getActivity().getSharedPreferences("User", Context.MODE_PRIVATE);
+//                                        settings.edit().clear().commit();
+//                                        //jsonObject.getString("id");
+//                                      //  jsonObject = null;
+//
+//                                       // Log.d("26JanV1", "json5555555" + json);
+//                                        Log.d("26JanV1", "num55555555" + num);}
 
     }//Main Method
 
@@ -121,28 +128,18 @@ public class MainFragment extends Fragment {
                                 CheckBox checkBox = getView().findViewById(R.id.chbRemember);
                                 if (checkBox.isChecked()) {
                                     SharedPreferences sharedPreferences = getActivity().getSharedPreferences("User", Context.MODE_PRIVATE);
+
                                     SharedPreferences.Editor editor = sharedPreferences.edit();
                                     editor.putString("id", jsonObject.getString("id"));
                                     editor.commit();
 
+
                                 }
-//                                    if (num.equals("1")){
-//                                        SharedPreferences settings = getActivity().getSharedPreferences("PreferencesName", Context.MODE_PRIVATE);
-//                                        settings.edit().clear().commit();
-//
-//
-//                                        Log.d("26JanV1", "json5555555" + json);
-//                                        Log.d("26JanV1", "num55555555" + num);
-//                                    }
-
-
-//                                    else {
                                             Intent intent = new Intent(getActivity(), DocTorActivity.class);
                                             intent.putExtra("id", jsonObject.getString("id"));
                                             startActivity(intent);
                                             getActivity().finish();
-//                                            }
-                                         }
+                            }
                             else {
                                 myAlert.normalDialog("Password False","Pleaase Try Again Password False" );
                             }

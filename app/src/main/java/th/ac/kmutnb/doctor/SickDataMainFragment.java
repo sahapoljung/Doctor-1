@@ -4,6 +4,8 @@ package th.ac.kmutnb.doctor;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,7 +40,7 @@ public class SickDataMainFragment extends Fragment {
         View view =inflater.inflate(R.layout.fragment_sick_data_main, container, false);
         loadList = (ListView) view.findViewById(R.id.lvsickdata);
         arrayList = new ArrayList<>();
-        String[] string = {"ไอ", "น้ำมูกไหล", "ปวดศรีษะ","มีไข้","เป็นแผล","ก้างติดคอ","ปวดเมื่อยกล้ามเนื้อจากการออกกำลังกาย","ผดคันจากอากาศร้อน"};
+        String[] string = {"ไอ", "น้ำมูกไหล", "ปวดศรีษะ","มีไข้","เป็นแผล","ก้างติดคอ","ผดคันจากอากาศร้อน","ปวดเมื่อยจากการออกกำลังกาย","รังแค"};
 
 
         adapter = new ArrayAdapter<String>(this.context,android.R.layout.simple_list_item_1,string);
@@ -47,12 +49,18 @@ public class SickDataMainFragment extends Fragment {
 
         loadList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Log.d("26JanV1", "position sickdata ==>  " + position);
-                //  SparseBooleanArray checkedItemPositions = loadList.getCheckedItemPositions();
-                //  int itemCount = adapter.getCount();
-                //checkedItemPositions.clear();
-                // adapter.notifyDataSetChanged();
+            public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
+                String s = String.valueOf(i);
+                Log.d("26JanV1", "position sickdata ==>  " + s);
+                Bundle bundle = new Bundle();
+                bundle.putString("num", s);
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+                SickData1Fragment sickData1Fragment  = new SickData1Fragment();
+                sickData1Fragment.setArguments(bundle);
+                fragmentTransaction.replace(R.id.flsickdata, sickData1Fragment);
+                fragmentTransaction.commit();
 
             }
         });

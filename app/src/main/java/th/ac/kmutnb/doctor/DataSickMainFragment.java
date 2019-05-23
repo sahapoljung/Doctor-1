@@ -45,7 +45,7 @@ public class DataSickMainFragment extends Fragment {
 
         loadList = (ListView) view.findViewById(R.id.lvdatasick);
         arrayList = new ArrayList<>();
-        String[] string = {"โรคไข้หวัด", "หวัดภูมิแพ้", "บ้านหมุนจากการเปลี่ยนท่า","ไมเกรน","โรคขาดวิตามินเอ","โรคขาดวิตามินบี 1","โรคขาดวิตามินบี 2","โรคขาดวิตามินซี"};
+        String[] string = {"โรคไข้หวัด", "โรคหวัดภูมิแพ้", "โรคบ้านหมุนจากการเปลี่ยนท่า","โรคไมเกรน","โรคขาดวิตามินเอ","โรคกระเพาะปัสสาวะอักเสบ","โรคกระเพาะอักเสบ","โรคขาดวิตามินซี","โรคท้องเดินหรืออุจจาระร่วง"};
 
 
             adapter = new ArrayAdapter<String>(this.context,android.R.layout.simple_list_item_1,string);
@@ -56,8 +56,8 @@ public class DataSickMainFragment extends Fragment {
         loadList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
-
-                String s= String.valueOf(i);
+//              ส่งค่าเลเยอร์ที่กดไปยัง ข้อมูลโรค
+                String s = String.valueOf(i);
                 Log.d("26JanV1", "position sickdata ==>  " + s);
                 Bundle bundle = new Bundle();
                 bundle.putString("num", s);
@@ -68,10 +68,7 @@ public class DataSickMainFragment extends Fragment {
                 datasick1Fragment.setArguments(bundle);
                 fragmentTransaction.replace(R.id.fldata, datasick1Fragment);
                 fragmentTransaction.commit();
-                      //  SparseBooleanArray checkedItemPositions = loadList.getCheckedItemPositions();
-                      //  int itemCount = adapter.getCount();
-                        //checkedItemPositions.clear();
-                       // adapter.notifyDataSetChanged();
+
 
             }
         });
@@ -79,14 +76,6 @@ public class DataSickMainFragment extends Fragment {
 
     return view;
 
-
-
-
-
-       // RecyclerView recyclerView = getActivity().(RecyclerView)findViewById(R.id.recyclerview);
-
-
-        //final ListView lisView1 = (ListView)findViewById(R.id.listView1);
 
     }
     public void onAttach(Context context) {
