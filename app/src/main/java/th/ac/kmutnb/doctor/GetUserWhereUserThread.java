@@ -2,6 +2,7 @@ package th.ac.kmutnb.doctor;
 
 import android.content.Context;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import com.squareup.okhttp.FormEncodingBuilder;
 import com.squareup.okhttp.OkHttpClient;
@@ -29,7 +30,9 @@ public class GetUserWhereUserThread extends AsyncTask<String,Void,String> {
             Request.Builder builder = new Request.Builder();
             Request request = builder.url(strings[1]).post(requestBody).build();
             Response response = okHttpClient.newCall(request).execute();
+            //Log.d("26JanV1", "bbbbbbbbbbbbbbbb    " +response.body().string());
             return response.body().string();
+           // Log.d("26JanV1", "bbbbbbbbbbbbbbbb    " +response.body().string());
 
 
         } catch (Exception e) {

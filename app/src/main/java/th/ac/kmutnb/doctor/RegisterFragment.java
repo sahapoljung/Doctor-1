@@ -29,7 +29,7 @@ public class RegisterFragment extends Fragment {
     private String nameString ,surnameString , genderString, heightString, weightString,ageString, userString , passwordString ;
 
     private boolean genderBoolean = true, heightABoolean = true , weightABoolean = true , ageABoolena = true;
-
+    private String urlPHP = "https://www.androidthai.in.th/sam/addData.php";
     public RegisterFragment() {
         // Required empty public constructor
     }
