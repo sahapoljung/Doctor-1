@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="s2">19sp</dimen>
     <dimen name="s1">20sp</dimen>
     <dimen name="m1">30dp</dimen>
     <dimen name="h0">29sp</dimen>

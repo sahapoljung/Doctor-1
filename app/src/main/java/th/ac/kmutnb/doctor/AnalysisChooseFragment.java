@@ -24,6 +24,7 @@ public class AnalysisChooseFragment extends Fragment implements View.OnClickList
     private String in ="0",num, a="01",b="001",c="0001",d="00001",e="000001",f="0000001",g="00000001";
     private String six,data;
     private String datanum;
+
     public AnalysisChooseFragment() {
         // Required empty public constructor
     }
@@ -64,11 +65,11 @@ public class AnalysisChooseFragment extends Fragment implements View.OnClickList
         //8
         if (in.equals("000000")) {textView.setText("คุณมีอาการเหงือกบวมแดง ใช่หรือไม่");qImageView.setBackgroundResource(R.drawable.g8_1);}
         //9
-        if (in.equals("0000000")) {textView.setText("คุณมีอาการถ่ายเป็นน้ำหรือถ่ายเหลวมากกว่าวันละ 3 ครั้งใช่หรือไม่");qImageView.setBackgroundResource(R.drawable.whileee);}
+        if (in.equals("0000000")) {textView.setText("คุณมีอาการถ่ายเป็นน้ำหรือถ่ายเหลวมากกว่าวันละ 3 ครั้งใช่หรือไม่");qImageView.setBackgroundResource(0);}
 //      หน้าสุดท้ายที่ให้เลือกไปที่อาการต่อ
         if (in.equals("00000000")) {textView.setText("ระบบไม่สามารถวิเคราะห์อาการที่คุณเป็นได้");
             textView1.setGravity(1);
-            textView1.setText("* ถ้าคุณต้องการดูอาการเพื่อดูแล\n"+ "รักษาเบื้องต้นกด\n"+" ' Yes ' ถ้าไม่กด ' No '"); }
+            textView1.setText(" * ถ้าคุณต้องการดูอาการเพื่อดูแล\n"+ "รักษาเบื้องต้นกด\n"+" ' Yes ' ถ้าไม่กด ' No '"); }
         if (in.equals("000000000")) {
             Intent intent = new Intent(getActivity(),DocTorActivity.class);
             startActivity(intent);
@@ -124,7 +125,7 @@ public class AnalysisChooseFragment extends Fragment implements View.OnClickList
         if (in.equals("1")) { textView.setText("คุณมีอาการตัวร้อน หรืออุณหภูมิเกิน 37.5 องศา ใช่หรือไม่");
             textView1.setTextSize(20);
         textView1.setText(" * อาการตัวร้อน คือ\n" +
-                    "      1. เอามือทาบหน้าผากหรือคอ สังเกตว่าร้อนกว่าปกติหรือป่าว\n" +
+                    "      1. เอามือทาบหน้าผากหรือคอ สังเกตว่าร้อนกว่าปกติหรือไม่\n" +
                     "      2. สังเกตว่าหน้าแดงเรื่อหรือแดงจัดหรือเปล่า\n");}
         if (in.equals("11")) { textView.setText("ก่อนหน้านี้คุณได้ไปทำงาน หรือไปสัมผัสอากาศที่เปลี่ยนแปลงอย่างฉับพลัน ใช่หรือไม่");
             textView1.setText("");}
@@ -228,7 +229,7 @@ public class AnalysisChooseFragment extends Fragment implements View.OnClickList
         if (in.equals("1")) { textView.setText("คุณมีอาการตามองเห็นไม่ชัด สายตามืดมัว เห็นภาพผิดเพี้ยน เห็นภาพซ้อน เห็นเงาหยากไย่/แมลงลอยไปมา หรือแสงวาบคล้ายฟ้าแลบ หรือลายสายตาแคบ (มองไม่เห็นด้านข้าง) ใช่หรือไม่");
             qImageView.setBackgroundResource(R.drawable.g5_1);}
         if (in.equals("11")||in.equals("10")) { textView.setText("คุณมีอาการมองไม่เห็นในที่แสงน้อย หรือตาฟ้าฟางตอนกลางคืน ใช่หรือไม่");
-            qImageView.setBackgroundResource(R.drawable.whileee);}
+            qImageView.setBackgroundResource(0);}
         if (in.equals("111")||in.equals("101")||in.equals("110")||in.equals("100")) { textView.setText("คุณมีอาการผิวหนังแห้ง และหยาบกร้าน ใช่หรือไม่"); }
         if (in.equals("1111")||in.equals("1011")||in.equals("1101")||in.equals("1001")||in.equals("1110")||in.equals("1010")||in.equals("1100")||in.equals("1000")) {
 
@@ -262,7 +263,7 @@ public class AnalysisChooseFragment extends Fragment implements View.OnClickList
         }
         if (in.equals("11") || in.equals("10")) {
             textView.setText("ภายในหนึ่งวันคุณปัสสาวะบ่อย มากกว่า 10 ครั้งต่อวัน แต่ครั้งละออกแบบกะปริบกะปรอย และคล้ายถ่ายปัสสาวะไม่สุด ใช่หรือไม่");
-            qImageView.setBackgroundResource(R.drawable.whileee);
+            qImageView.setBackgroundResource(0);
         }
 
         if (in.equals("111") || in.equals("101") || in.equals("110") || in.equals("100")) {
@@ -296,7 +297,7 @@ public class AnalysisChooseFragment extends Fragment implements View.OnClickList
         char someChar = '1';
         int count = 0;
         if (in.equals("1")) { textView.setText("คุณปวดแบบเป็น ๆ หาย ๆ มาไม่น้อยกว่าหนึ่งเดือน ใช่หรือไม่");
-            qImageView.setBackgroundResource(R.drawable.whileee);}
+            qImageView.setBackgroundResource(0);}
         if (in.equals("11")||in.equals("10")) { textView.setText("คุณปวดท้อง ขณะที่เกี่ยวข้องกับมื้ออาหาร เช่น ปวดขณะหิวหรืออิ่มแต่เป็นการปวดแบบทนได้ ใช่หรือไม่"); }
         if (in.equals("111")||in.equals("101")||in.equals("110")||in.equals("100")) { textView.setText("คุณมีอาการท้องเฟ้อ อิ่มง่าย จุกหน้าอกแน่นท้อง เรอบ่อย อาหารไม่ย่อย และรู้สึกคลื่นไส้หลังการรับประทานอาหารไม่มีความอยากอาหาร ใช่หรือไม่"); }
 
@@ -323,7 +324,7 @@ public class AnalysisChooseFragment extends Fragment implements View.OnClickList
         char someChar = '1';
         int count = 0;
         if (in.equals("1")) { textView.setText("เมื่อคุณแปรงฟัน มักจะมีอาการเลือดออกตามไรฟัน ใช่หรือไม่"); qImageView.setBackgroundResource(R.drawable.g8_2); }
-        if (in.equals("11")||in.equals("10")) { textView.setText("ช่วงนี้คุณรู้สึกมีอาการเจ็บป่วยได้ง่าย ใช่หรือไม่"); }
+        if (in.equals("11")||in.equals("10")) { textView.setText("ช่วงนี้คุณรู้สึกมีอาการเจ็บป่วยได้ง่าย ใช่หรือไม่");qImageView.setBackgroundResource(0); }
         if (in.equals("111")||in.equals("101")||in.equals("110")||in.equals("100")) {
 //        textView.setText("โรคขาดวิตามินซีหรือโรคลักปิดลักเปิด");
             for (int i = 0; i < in.length(); i++) { if (in.charAt(i) == someChar) { count++; } }

@@ -96,16 +96,14 @@
                     android:textStyle="bold" />
 
                 <TextView
-android:id="@+id/txtdatafinol3"
-                    android:gravity="center"
+                    android:id="@+id/txtdatafinol3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="20dp"
-                    android:layout_marginRight="5dp"
-                    android:text="ถ้าคุณต้องการดูข้อมูลรักษาอาการเบื้องต้น"
-                    android:textSize="@dimen/h2" />
+                    android:layout_marginRight="10dp"
+                    android:text=""
+                    android:textSize="22sp" />
 
                 <TextView
                     android:id="@+id/txtdatafinol2"

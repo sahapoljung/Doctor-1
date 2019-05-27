@@ -15,8 +15,9 @@
         android:layout_height="?attr/actionBarSize"
         android:background="@color/colorPrimary"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <!--android:background="#ffffff"-->
     <ScrollView
-        android:background="#ffffff"
+
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -24,36 +25,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-            <!--// ข้างบน-->
-            <!--<LinearLayout-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:background="@color/colorPrimary"-->
-                <!--android:orientation="vertical">-->
-
-                <!--<TextView-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="15dp"-->
-                    <!--android:text="" />-->
-
-                <!--<TextView-->
-                    <!--android:id="@+id/txtAmain"-->
-                    <!--android:layout_gravity="center_horizontal"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text=""-->
-                    <!--android:textColor="#ffffff"-->
-                    <!--android:textSize="@dimen/h1"-->
-                    <!--android:textStyle="bold" />-->
-
-                <!--<TextView-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="15dp"-->
-                    <!--android:text="" />-->
-
-            <!--</LinearLayout>-->
-
-
             <!--ข้อคววามหลักก่อนกระจาย-->
             <!--txtBmain3-->
             <!--รูปลูกศรขึ้น-ลง-->
@@ -65,6 +36,8 @@
             <!--เริ่ม-->
             <!--1-->
             <LinearLayout
+                android:clickable="true"
+                android:id="@+id/llsick1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -75,34 +48,29 @@
                     android:orientation="horizontal">
                     <!--ข้อคววามหลักก่อนกระจาย-->
                     <TextView
-                        android:layout_marginTop="15dp"
+                        android:layout_marginTop="10dp"
                         android:id="@+id/txtBmain1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginLeft="20dp"
                         android:layout_weight="1"
                         android:text=""
                         android:clickable="true"
-                        android:textSize="22dp"
-                        android:textColor="#000000"
-                        android:textStyle="bold" />
+                        android:textSize="@dimen/s1"
+                        android:textColor="#000000" />
                     <!--รูปลูกศรขึ้น-ลง-->
                     <ImageView
+                        android:layout_marginRight="@dimen/s1"
                         android:id="@+id/imagesA1"
                         android:layout_width="30dp"
                         android:layout_height="match_parent"
                         android:background="@drawable/whileee"
                         android:clickable="true"/>
 
-                    <TextView
-                        android:layout_width="10dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="10dp"
-                        android:textSize="@dimen/h1"
-                        android:textStyle="bold" />
                 </LinearLayout>
                 <!--ข้อความในเนื้อหาที่แตกลงมา-->
                 <TextView
+                    android:textColor="#000000"
                     android:id="@+id/txtCmain1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -113,11 +81,11 @@
                     android:textStyle="italic"
                     android:textSize="15dp"/>
 
+                <!--android:background="@drawable/whileee"-->
                 <ImageView
                     android:id="@+id/imagesB1"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/whileee" />
+                    android:layout_height="wrap_content" />
             </LinearLayout>
             <TextView
                 android:id="@+id/txtcolked1"
@@ -129,6 +97,8 @@
                 android:textSize="@dimen/h1" />
             <!--2-->
             <LinearLayout
+                android:clickable="true"
+                android:id="@+id/llsick2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -139,34 +109,29 @@
                     android:orientation="horizontal">
                     <!--ข้อคววามหลักก่อนกระจาย-->
                     <TextView
-                        android:layout_marginTop="15dp"
+                        android:layout_marginTop="10dp"
                         android:id="@+id/txtBmain2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginLeft="20dp"
                         android:layout_weight="1"
                         android:text=""
                         android:clickable="true"
-                        android:textSize="22dp"
-                        android:textColor="#000000"
-                        android:textStyle="bold" />
+                        android:textSize="@dimen/s1"
+                        android:textColor="#000000" />
                     <!--รูปลูกศรขึ้น-ลง-->
                     <ImageView
+                        android:layout_marginRight="@dimen/s1"
                         android:id="@+id/imagesA2"
                         android:layout_width="30dp"
                         android:layout_height="match_parent"
                         android:background="@drawable/whileee"
                         android:clickable="true"/>
 
-                    <TextView
-                        android:layout_width="10dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="10dp"
-                        android:textSize="@dimen/h1"
-                        android:textStyle="bold" />
                 </LinearLayout>
                 <!--ข้อความในเนื้อหาที่แตกลงมา-->
                 <TextView
+                    android:textColor="#000000"
                     android:id="@+id/txtCmain2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -180,8 +145,7 @@
                 <ImageView
                     android:id="@+id/imagesB2"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/whileee" />
+                    android:layout_height="wrap_content" />
             </LinearLayout>
             <TextView
                 android:id="@+id/txtcolked2"
@@ -193,6 +157,8 @@
                 android:textSize="@dimen/h1" />
             <!--3-->
             <LinearLayout
+                android:clickable="true"
+                android:id="@+id/llsick3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -203,34 +169,29 @@
                     android:orientation="horizontal">
                     <!--ข้อคววามหลักก่อนกระจาย-->
                     <TextView
-                        android:layout_marginTop="15dp"
+                        android:layout_marginTop="10dp"
                         android:id="@+id/txtBmain3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginLeft="20dp"
                         android:layout_weight="1"
                         android:text=""
                         android:clickable="true"
-                        android:textSize="22dp"
-                        android:textColor="#000000"
-                        android:textStyle="bold" />
+                        android:textSize="@dimen/s1"
+                        android:textColor="#000000" />
                     <!--รูปลูกศรขึ้น-ลง-->
                     <ImageView
+                        android:layout_marginRight="@dimen/s1"
                         android:id="@+id/imagesA3"
                         android:layout_width="30dp"
                         android:layout_height="match_parent"
                         android:background="@drawable/whileee"
                         android:clickable="true"/>
 
-                    <TextView
-                        android:layout_width="10dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="10dp"
-                        android:textSize="@dimen/h1"
-                        android:textStyle="bold" />
                 </LinearLayout>
                 <!--ข้อความในเนื้อหาที่แตกลงมา-->
                 <TextView
+                    android:textColor="#000000"
                     android:id="@+id/txtCmain3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -244,8 +205,7 @@
                 <ImageView
                     android:id="@+id/imagesB3"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/whileee" />
+                    android:layout_height="wrap_content" />
             </LinearLayout>
             <TextView
                 android:id="@+id/txtcolked3"
@@ -257,6 +217,8 @@
                 android:textSize="@dimen/h1" />
             <!--4-->
             <LinearLayout
+                android:clickable="true"
+                android:id="@+id/llsick4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -267,34 +229,30 @@
                     android:orientation="horizontal">
                     <!--ข้อคววามหลักก่อนกระจาย-->
                     <TextView
-                        android:layout_marginTop="15dp"
+                        android:layout_marginTop="10dp"
                         android:id="@+id/txtBmain4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginLeft="20dp"
                         android:layout_weight="1"
                         android:text=""
                         android:clickable="true"
-                        android:textSize="22dp"
-                        android:textColor="#000000"
-                        android:textStyle="bold" />
+                        android:textSize="@dimen/s1"
+                        android:textColor="#000000" />
                     <!--รูปลูกศรขึ้น-ลง-->
                     <ImageView
+                        android:layout_marginRight="@dimen/s1"
                         android:id="@+id/imagesA4"
                         android:layout_width="30dp"
                         android:layout_height="match_parent"
                         android:background="@drawable/whileee"
                         android:clickable="true"/>
 
-                    <TextView
-                        android:layout_width="10dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="10dp"
-                        android:textSize="@dimen/h1"
-                        android:textStyle="bold" />
+
                 </LinearLayout>
                 <!--ข้อความในเนื้อหาที่แตกลงมา-->
                 <TextView
+                    android:textColor="#000000"
                     android:id="@+id/txtCmain4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -308,8 +266,7 @@
                 <ImageView
                     android:id="@+id/imagesB4"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/whileee" />
+                    android:layout_height="wrap_content" />
             </LinearLayout>
             <TextView
                 android:id="@+id/txtcolked4"
@@ -321,6 +278,8 @@
                 android:textSize="@dimen/h1" />
             <!--5-->
             <LinearLayout
+                android:clickable="true"
+                android:id="@+id/llsick5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -331,34 +290,29 @@
                     android:orientation="horizontal">
                     <!--ข้อคววามหลักก่อนกระจาย-->
                     <TextView
-                        android:layout_marginTop="15dp"
+                        android:layout_marginTop="10dp"
                         android:id="@+id/txtBmain5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginLeft="20dp"
                         android:layout_weight="1"
                         android:text=""
                         android:clickable="true"
-                        android:textSize="22dp"
-                        android:textColor="#000000"
-                        android:textStyle="bold" />
+                        android:textSize="@dimen/s1"
+                        android:textColor="#000000" />
                     <!--รูปลูกศรขึ้น-ลง-->
                     <ImageView
+                        android:layout_marginRight="@dimen/s1"
                         android:id="@+id/imagesA5"
                         android:layout_width="30dp"
                         android:layout_height="match_parent"
                         android:background="@drawable/whileee"
                         android:clickable="true"/>
 
-                    <TextView
-                        android:layout_width="10dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="10dp"
-                        android:textSize="@dimen/h1"
-                        android:textStyle="bold" />
                 </LinearLayout>
                 <!--ข้อความในเนื้อหาที่แตกลงมา-->
                 <TextView
+                    android:textColor="#000000"
                     android:id="@+id/txtCmain5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -372,8 +326,7 @@
                 <ImageView
                     android:id="@+id/imagesB5"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/whileee" />
+                    android:layout_height="wrap_content" />
             </LinearLayout>
             <TextView
                 android:id="@+id/txtcolked5"
@@ -385,6 +338,8 @@
                 android:textSize="@dimen/h1" />
             <!--6-->
             <LinearLayout
+                android:clickable="true"
+                android:id="@+id/llsick6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -395,34 +350,29 @@
                     android:orientation="horizontal">
                     <!--ข้อคววามหลักก่อนกระจาย-->
                     <TextView
-                        android:layout_marginTop="25dp"
+                        android:layout_marginTop="10dp"
                         android:id="@+id/txtBmain6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginLeft="20dp"
                         android:layout_weight="1"
                         android:text=""
                         android:clickable="true"
-                        android:textSize="22dp"
-                        android:textColor="#000000"
-                        android:textStyle="bold" />
+                        android:textSize="@dimen/s1"
+                        android:textColor="#000000" />
                     <!--รูปลูกศรขึ้น-ลง-->
                     <ImageView
+                        android:layout_marginRight="@dimen/s1"
                         android:id="@+id/imagesA6"
                         android:layout_width="30dp"
                         android:layout_height="match_parent"
-                        android:background="@drawable/whileee"
                         android:clickable="true"/>
 
-                    <TextView
-                        android:layout_width="10dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="10dp"
-                        android:textSize="@dimen/h1"
-                        android:textStyle="bold" />
+
                 </LinearLayout>
                 <!--ข้อความในเนื้อหาที่แตกลงมา-->
                 <TextView
+                    android:textColor="#000000"
                     android:id="@+id/txtCmain6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -436,12 +386,10 @@
                 <ImageView
                     android:id="@+id/imagesB6"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/whileee" />
+                    android:layout_height="wrap_content" />
             </LinearLayout>
             <TextView
                 android:id="@+id/txtcolked6"
-                android:background="#ffffff"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_weight="1"
@@ -449,6 +397,8 @@
                 android:textSize="@dimen/h1" />
             <!--7-->
             <LinearLayout
+                android:clickable="true"
+                android:id="@+id/llsick7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -459,34 +409,29 @@
                     android:orientation="horizontal">
                     <!--ข้อคววามหลักก่อนกระจาย-->
                     <TextView
-                        android:layout_marginTop="15dp"
+                        android:layout_marginTop="10dp"
                         android:id="@+id/txtBmain7"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginLeft="20dp"
                         android:layout_weight="1"
                         android:text=""
                         android:clickable="true"
-                        android:textSize="22dp"
-                        android:textColor="#000000"
-                        android:textStyle="bold" />
+                        android:textSize="@dimen/s1"
+                        android:textColor="#000000" />
                     <!--รูปลูกศรขึ้น-ลง-->
                     <ImageView
+                        android:layout_marginRight="@dimen/s1"
                         android:id="@+id/imagesA7"
                         android:layout_width="30dp"
                         android:layout_height="match_parent"
-                        android:background="@drawable/whileee"
                         android:clickable="true"/>
 
-                    <TextView
-                        android:layout_width="10dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="10dp"
-                        android:textSize="@dimen/h1"
-                        android:textStyle="bold" />
+
                 </LinearLayout>
                 <!--ข้อความในเนื้อหาที่แตกลงมา-->
                 <TextView
+                    android:textColor="#000000"
                     android:id="@+id/txtCmain7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -500,12 +445,10 @@
                 <ImageView
                     android:id="@+id/imagesB7"
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@drawable/whileee" />
+                    android:layout_height="1dp" />
             </LinearLayout>
             <TextView
                 android:id="@+id/txtcolked7"
-                android:background="#ffffff"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_weight="1"
@@ -513,6 +456,8 @@
                 android:textSize="@dimen/h1" />
             <!--8-->
             <LinearLayout
+                android:clickable="true"
+                android:id="@+id/llsick8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -523,34 +468,29 @@
                     android:orientation="horizontal">
                     <!--ข้อคววามหลักก่อนกระจาย-->
                     <TextView
-                        android:layout_marginTop="15dp"
+                        android:layout_marginTop="10dp"
                         android:id="@+id/txtBmain8"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginLeft="20dp"
                         android:layout_weight="1"
                         android:text=""
                         android:clickable="true"
-                        android:textSize="22dp"
-                        android:textColor="#000000"
-                        android:textStyle="bold" />
+                        android:textSize="@dimen/s1"
+                        android:textColor="#000000" />
                     <!--รูปลูกศรขึ้น-ลง-->
                     <ImageView
+                        android:layout_marginRight="@dimen/s1"
                         android:id="@+id/imagesA8"
                         android:layout_width="30dp"
                         android:layout_height="match_parent"
-                        android:background="@drawable/whileee"
                         android:clickable="true"/>
 
-                    <TextView
-                        android:layout_width="10dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="10dp"
-                        android:textSize="@dimen/h1"
-                        android:textStyle="bold" />
+
                 </LinearLayout>
                 <!--ข้อความในเนื้อหาที่แตกลงมา-->
                 <TextView
+                    android:textColor="#000000"
                     android:id="@+id/txtCmain8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -564,12 +504,10 @@
                 <ImageView
                     android:id="@+id/imagesB8"
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@drawable/whileee" />
+                    android:layout_height="1dp" />
             </LinearLayout>
             <TextView
                 android:id="@+id/txtcolked8"
-                android:background="#ffffff"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_weight="1"

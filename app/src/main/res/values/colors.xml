@@ -6,6 +6,7 @@
     <color name="colorAccent">#2875A7</color>
     <color name="colorMain">#EBDDC3</color>
     <color name="colorked">#BEB6B6</color>
+    <color name="colorblack">#000000</color>
 
     <!--<color name="colorPrimary">#c0e3cb</color>-->
 </resources>

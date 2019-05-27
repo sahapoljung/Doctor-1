@@ -15,29 +15,22 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textSize="10dp" />
 
             <TextView
+
+                android:layout_marginTop="15dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="คณะผู้จัดทำ"
-                android:textColor="#53857c"
-                android:textSize="30dp"
+                android:textColor="@color/colorblack"
+                android:textSize="@dimen/h1"
                 android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textSize="15dp" />
 
 
             <ImageView
+                android:layout_marginTop="15dp"
                 android:id="@+id/imageView"
                 android:layout_width="203dp"
                 android:layout_height="158dp"
@@ -45,124 +38,114 @@
                 android:src="@drawable/art" />
 
             <TextView
+                android:layout_margin="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="นาย  ธนเดช โชคอำนวย"
-                android:textColor="#53857c"
-                android:textSize="24dp"
+                android:textColor="@color/colorblack"
+                android:textSize="@dimen/s2"
                 android:textStyle="bold" />
 
             <TextView
+                android:layout_margin="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="รหัส 6003052411054"
-                android:textColor="#53857c"
-                android:textSize="24dp"
+                android:textColor="@color/colorblack"
+                android:textSize="@dimen/s2"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="สาขาวิชาเทคโนโลยีอิเล็กทรอนิกส์"
-                android:textColor="#53857c"
-                android:textSize="24dp"
+                android:layout_margin="5dp"
+                android:gravity="center_horizontal"
+                android:text="สาขาวิชาเทคโนโลยีอิเล็กทรอนิกส์(โทรคมนาคม)"
+                android:textColor="@color/colorblack"
+                android:textSize="@dimen/s2"
                 android:textStyle="bold" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="(โทรคมนาคม)"
-                android:textColor="#53857c"
-                android:textSize="24dp"
-                android:textStyle="bold" />
-
-            <TextView
+                android:gravity="center_horizontal"
+                android:layout_margin="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="ภาควิชาเทคโนโลยีวิศวกรรมอิเล็กทรอนิกส์"
-                android:textColor="#53857c"
-                android:textSize="19dp"
+                android:textColor="@color/colorblack"
+                android:textSize="@dimen/s2"
                 android:textStyle="bold" />
 
             <TextView
+                android:layout_margin="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="วิทยาลัยเทคโนโลยีอุตสาหกรรม"
-                android:textColor="#53857c"
-                android:textSize="24dp"
+                android:textColor="@color/colorblack"
+                android:textSize="@dimen/s2"
                 android:textStyle="bold" />
             <!--คนที่สอง-->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textSize="15dp" />
-
             <ImageView
-                android:id="@+id/imageView3"
+                android:layout_marginTop="15dp"
                 android:layout_width="203dp"
                 android:layout_height="158dp"
                 android:layout_gravity="center_horizontal"
                 android:src="@drawable/sam" />
 
             <TextView
+                android:layout_margin="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="นาย  สหพล สำเภาทอง"
-                android:textColor="#53857c"
-                android:textSize="24dp"
+                android:textColor="@color/colorblack"
+                android:textSize="@dimen/s2"
                 android:textStyle="bold" />
 
             <TextView
+                android:layout_margin="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="รหัส 6003052411127"
-                android:textColor="#53857c"
-                android:textSize="24dp"
+                android:textColor="@color/colorblack"
+                android:textSize="@dimen/s2"
                 android:textStyle="bold" />
 
             <TextView
+                android:gravity="center_horizontal"
+                android:layout_margin="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="สาขาวิชาเทคโนโลยีอิเล็กทรอนิกส์"
-                android:textColor="#53857c"
-                android:textSize="24dp"
+                android:text="สาขาวิชาเทคโนโลยีอิเล็กทรอนิกส์(โทรคมนาคม)"
+                android:textColor="@color/colorblack"
+                android:textSize="@dimen/s2"
                 android:textStyle="bold" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="(โทรคมนาคม)"
-                android:textColor="#53857c"
-                android:textSize="24dp"
-                android:textStyle="bold" />
-
-            <TextView
+                android:gravity="center_horizontal"
+                android:layout_margin="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="ภาควิชาเทคโนโลยีวิศวกรรมอิเล็กทรอนิกส์"
-                android:textColor="#53857c"
-                android:textSize="19dp"
+                android:textColor="@color/colorblack"
+                android:textSize="@dimen/s2"
                 android:textStyle="bold" />
 
             <TextView
+                android:layout_margin="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="วิทยาลัยเทคโนโลยีอุตสาหกรรม"
-                android:textColor="#53857c"
-                android:textSize="24dp"
+                android:textColor="@color/colorblack"
+                android:textSize="@dimen/s2"
                 android:textStyle="bold" />
 
         </LinearLayout>

@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -35,6 +36,7 @@ public class Datasick1Fragment extends Fragment {
     ImageView imagesA1,imagesA2,imagesA3,imagesA4,imagesA5,imagesA6,imagesA7, imagesA8 ;
     TextView txtCmain1,txtCmain2,txtCmain3,txtCmain4,txtCmain5,txtCmain6,txtCmain7,txtCmain8;
     ImageView imagesB1,imagesB2,imagesB3,imagesB4,imagesB5,imagesB6,imagesB7, imagesB8;
+    LinearLayout linearLayout1,linearLayout2,linearLayout3,linearLayout4,linearLayout5,linearLayout6,linearLayout7,linearLayout8;
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -50,6 +52,7 @@ public class Datasick1Fragment extends Fragment {
         Bundle bundle = getArguments();
         num = bundle.getString("num");
         pakad(view);
+
 
         //<!--ข้อคววามหลักก่อนกระจาย-->
 //            <!--txtBmain1-->
@@ -91,6 +94,9 @@ public class Datasick1Fragment extends Fragment {
             }
         });
 
+
+
+
         txtBmain2.setText("สาเหตุ");
         txtBmain2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,6 +104,7 @@ public class Datasick1Fragment extends Fragment {
                 Sick_sick1_2();
             }
         });
+
 
         txtBmain3.setText("อาการ");
         txtBmain3.setOnClickListener(new View.OnClickListener() {
@@ -231,6 +238,54 @@ public class Datasick1Fragment extends Fragment {
         txtcolked7.setBackgroundColor(getResources().getColor(R.color.colorked));
         txtcolked8.setBackgroundColor(getResources().getColor(R.color.colorked));
 
+        linearLayout1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick1_1();
+            }
+        });
+        linearLayout2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick1_2();
+            }
+        });
+        linearLayout3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick1_3();
+            }
+        });
+        linearLayout4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick1_4();
+            }
+        });
+        linearLayout5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick1_5();
+            }
+        });
+        linearLayout6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick1_6();
+            }
+        });
+        linearLayout7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick1_7();
+            }
+        });
+        linearLayout8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick1_8();
+            }
+        });
 
     }
     private void Sick_sick1_1() {
@@ -244,7 +299,7 @@ public class Datasick1Fragment extends Fragment {
                 "      \tโรคนี้สามารถติดต่อกันได้ง่าย โดยการใกล้ชิดกัน จึงพบกันมากตามโรงเรียน โรงงาน และที่ๆมีคนรวมกลุ่มกันมากๆ\n" +
                 "      \tเป็นโรคที่พบได้ตลอดทั้งปี มักจะพบมากในช่วงฤดูฝน ฤดูหนาว หรือในช่วงที่มีอากาศเปลี่ยนแปลง ส่วนในฤดูร้อนจะพบน้อยลง \n");
         if (num1.equals("111")) {
-            txtCmain1.setTextSize(15);
+            txtCmain1.setTextSize(10);
             imagesA1.setBackgroundResource(R.drawable.dow);
             txtCmain1.setText("");
             num1 = "1";
@@ -273,7 +328,7 @@ public class Datasick1Fragment extends Fragment {
         imagesB3.setBackgroundResource(R.drawable.a1_1);
         if (num3.equals("111")) {
             txtCmain3.setText("");
-            imagesB3.setBackgroundResource(R.drawable.whileee);
+            imagesB3.setBackgroundResource(0);
             txtCmain3.setTextSize(15);
             imagesA3.setBackgroundResource(R.drawable.dow);
             num3 = "1";
@@ -301,7 +356,7 @@ public class Datasick1Fragment extends Fragment {
             txtCmain5.setTextSize(15);
             imagesA5.setBackgroundResource(R.drawable.dow);
             txtCmain5.setText("");
-            imagesB5.setBackgroundResource(R.drawable.whileee);
+            imagesB5.setBackgroundResource(0);
             num5 = "1";
         }
     }
@@ -499,20 +554,55 @@ public class Datasick1Fragment extends Fragment {
 
 
         txtcolked1.setBackgroundColor(getResources().getColor(R.color.colorked));
-
         txtcolked2.setBackgroundColor(getResources().getColor(R.color.colorked));
-
         txtcolked3.setBackgroundColor(getResources().getColor(R.color.colorked));
-
         txtcolked4.setBackgroundColor(getResources().getColor(R.color.colorked));
-
         txtcolked5.setBackgroundColor(getResources().getColor(R.color.colorked));
-
         txtcolked6.setBackgroundColor(getResources().getColor(R.color.colorked));
-
         txtcolked7.setBackgroundColor(getResources().getColor(R.color.colorked));
 
-
+        linearLayout1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick2_1();
+            }
+        });
+        linearLayout2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick2_2();
+            }
+        });
+        linearLayout3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick2_3();
+            }
+        });
+        linearLayout4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick2_4();
+            }
+        });
+        linearLayout5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick2_5();
+            }
+        });
+        linearLayout6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick2_6();
+            }
+        });
+        linearLayout7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick2_7();
+            }
+        });
 
     }
     private void Sick_sick2_1() {
@@ -626,6 +716,8 @@ public class Datasick1Fragment extends Fragment {
                 Sick_sick3_1();
             }
         });
+
+
 
         txtBmain2.setText("สาเหตุ");
         txtBmain2.setOnClickListener(new View.OnClickListener() {
@@ -742,20 +834,55 @@ public class Datasick1Fragment extends Fragment {
 
 
         txtcolked1.setBackgroundColor(getResources().getColor(R.color.colorked));
-
         txtcolked2.setBackgroundColor(getResources().getColor(R.color.colorked));
-
         txtcolked3.setBackgroundColor(getResources().getColor(R.color.colorked));
-
         txtcolked4.setBackgroundColor(getResources().getColor(R.color.colorked));
-
         txtcolked5.setBackgroundColor(getResources().getColor(R.color.colorked));
-
         txtcolked6.setBackgroundColor(getResources().getColor(R.color.colorked));
-
         txtcolked7.setBackgroundColor(getResources().getColor(R.color.colorked));
 
-
+        linearLayout1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick3_1();
+            }
+        });
+        linearLayout2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick3_2();
+            }
+        });
+        linearLayout3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick3_3();
+            }
+        });
+        linearLayout4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick3_4();
+            }
+        });
+        linearLayout5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick3_5();
+            }
+        });
+        linearLayout6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick3_6();
+            }
+        });
+        linearLayout7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick3_7();
+            }
+        });
 
     }
     private void Sick_sick3_1() {
@@ -804,7 +931,7 @@ public class Datasick1Fragment extends Fragment {
             txtCmain3.setTextSize(15);
             imagesA3.setBackgroundResource(R.drawable.dow);
             txtCmain3.setText("");
-            imagesB3.setBackgroundResource(R.drawable.whileee);
+            imagesB3.setBackgroundResource(0);
             num3 = "1";
         }
     }
@@ -820,7 +947,7 @@ public class Datasick1Fragment extends Fragment {
             txtCmain4.setTextSize(15);
             imagesA4.setBackgroundResource(R.drawable.dow);
             txtCmain4.setText("");
-            imagesB4.setBackgroundResource(R.drawable.whileee);
+            imagesB4.setBackgroundResource(0);
             num4 = "1";
         }
     }
@@ -863,7 +990,7 @@ public class Datasick1Fragment extends Fragment {
             txtCmain6.setTextSize(15);
             imagesA6.setBackgroundResource(R.drawable.dow);
             txtCmain6.setText("");
-            imagesB6.setBackgroundResource(R.drawable.whileee);
+            imagesB6.setBackgroundResource(0);
             num6 = "1";
         }
     }
@@ -1025,21 +1152,62 @@ public class Datasick1Fragment extends Fragment {
 
 
         txtcolked1.setBackgroundColor(getResources().getColor(R.color.colorked));
-
         txtcolked2.setBackgroundColor(getResources().getColor(R.color.colorked));
-
         txtcolked3.setBackgroundColor(getResources().getColor(R.color.colorked));
-
         txtcolked4.setBackgroundColor(getResources().getColor(R.color.colorked));
-
         txtcolked5.setBackgroundColor(getResources().getColor(R.color.colorked));
-
         txtcolked6.setBackgroundColor(getResources().getColor(R.color.colorked));
-
         txtcolked7.setBackgroundColor(getResources().getColor(R.color.colorked));
-
         txtcolked8.setBackgroundColor(getResources().getColor(R.color.colorked));
 
+        linearLayout1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick4_1();
+            }
+        });
+        linearLayout2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick4_2();
+            }
+        });
+        linearLayout3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick4_3();
+            }
+        });
+        linearLayout4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick4_4();
+            }
+        });
+        linearLayout5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick4_5();
+            }
+        });
+        linearLayout6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick4_6();
+            }
+        });
+        linearLayout7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick4_7();
+            }
+        });
+        linearLayout8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick4_8();
+            }
+        });
 
     }
     private void Sick_sick4_1() {
@@ -1100,7 +1268,7 @@ public class Datasick1Fragment extends Fragment {
             txtCmain3.setTextSize(15);
             imagesA3.setBackgroundResource(R.drawable.dow);
             txtCmain3.setText("");
-            imagesB3.setBackgroundResource(R.drawable.whileee);
+            imagesB3.setBackgroundResource(0);
             num3 = "1";
         }
     }
@@ -1138,7 +1306,7 @@ public class Datasick1Fragment extends Fragment {
             txtCmain4.setTextSize(15);
             imagesA4.setBackgroundResource(R.drawable.dow);
             txtCmain4.setText("");
-            imagesB4.setBackgroundResource(R.drawable.whileee);
+            imagesB4.setBackgroundResource(0);
             num4 = "1";
         }
     }
@@ -1336,19 +1504,55 @@ public class Datasick1Fragment extends Fragment {
 
 
         txtcolked1.setBackgroundColor(getResources().getColor(R.color.colorked));
-
         txtcolked2.setBackgroundColor(getResources().getColor(R.color.colorked));
-
         txtcolked3.setBackgroundColor(getResources().getColor(R.color.colorked));
-
         txtcolked4.setBackgroundColor(getResources().getColor(R.color.colorked));
-
         txtcolked5.setBackgroundColor(getResources().getColor(R.color.colorked));
-
         txtcolked6.setBackgroundColor(getResources().getColor(R.color.colorked));
-
         txtcolked7.setBackgroundColor(getResources().getColor(R.color.colorked));
 
+        linearLayout1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick5_1();
+            }
+        });
+        linearLayout2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick5_2();
+            }
+        });
+        linearLayout3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick5_3();
+            }
+        });
+        linearLayout4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick5_4();
+            }
+        });
+        linearLayout5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick5_5();
+            }
+        });
+        linearLayout6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick5_6();
+            }
+        });
+        linearLayout7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick5_7();
+            }
+        });
     }
     private void Sick_sick5_1() {
         num1 = num1+"1";
@@ -1389,7 +1593,7 @@ public class Datasick1Fragment extends Fragment {
             txtCmain3.setTextSize(15);
             imagesA3.setBackgroundResource(R.drawable.dow);
             txtCmain3.setText("");
-            imagesB3.setBackgroundResource(R.drawable.whileee);
+            imagesB3.setBackgroundResource(0);
             num3 = "1";
         }
     }
@@ -1598,6 +1802,55 @@ public class Datasick1Fragment extends Fragment {
         txtcolked7.setBackgroundColor(getResources().getColor(R.color.colorked));
         txtcolked8.setBackgroundColor(getResources().getColor(R.color.colorked));
 
+        linearLayout1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick6_1();
+            }
+        });
+        linearLayout2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick6_2();
+            }
+        });
+        linearLayout3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick6_3();
+            }
+        });
+        linearLayout4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick6_4();
+            }
+        });
+        linearLayout5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick6_5();
+            }
+        });
+        linearLayout6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick6_6();
+            }
+        });
+        linearLayout7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick6_7();
+            }
+        });
+        linearLayout8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick6_8();
+            }
+        });
+
 
     }
     private void Sick_sick6_1() {
@@ -1656,7 +1909,7 @@ public class Datasick1Fragment extends Fragment {
             txtCmain4.setTextSize(15);
             imagesA4.setBackgroundResource(R.drawable.dow);
             txtCmain4.setText("");
-            imagesB4.setBackgroundResource(R.drawable.whileee);
+            imagesB4.setBackgroundResource(0);
             num4 = "1";
         }
     }
@@ -1838,7 +2091,42 @@ public class Datasick1Fragment extends Fragment {
         txtcolked5.setBackgroundColor(getResources().getColor(R.color.colorked));
         txtcolked6.setBackgroundColor(getResources().getColor(R.color.colorked));
 
-
+        linearLayout1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick7_1();
+            }
+        });
+        linearLayout2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick7_2();
+            }
+        });
+        linearLayout3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick7_3();
+            }
+        });
+        linearLayout4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick7_4();
+            }
+        });
+        linearLayout5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick7_5();
+            }
+        });
+        linearLayout6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick7_6();
+            }
+        });
 
     }
     private void Sick_sick7_1() {
@@ -2038,7 +2326,36 @@ public class Datasick1Fragment extends Fragment {
         txtcolked4.setBackgroundColor(getResources().getColor(R.color.colorked));
         txtcolked5.setBackgroundColor(getResources().getColor(R.color.colorked));
 
-
+        linearLayout1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick8_1();
+            }
+        });
+        linearLayout2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick8_2();
+            }
+        });
+        linearLayout3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick8_3();
+            }
+        });
+        linearLayout4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick8_4();
+            }
+        });
+        linearLayout5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick8_5();
+            }
+        });
 
     }
     private void Sick_sick8_1() {
@@ -2255,20 +2572,62 @@ public class Datasick1Fragment extends Fragment {
 
 
         txtcolked1.setBackgroundColor(getResources().getColor(R.color.colorked));
-
         txtcolked2.setBackgroundColor(getResources().getColor(R.color.colorked));
-
         txtcolked3.setBackgroundColor(getResources().getColor(R.color.colorked));
-
         txtcolked4.setBackgroundColor(getResources().getColor(R.color.colorked));
-
         txtcolked5.setBackgroundColor(getResources().getColor(R.color.colorked));
-
         txtcolked6.setBackgroundColor(getResources().getColor(R.color.colorked));
-
         txtcolked7.setBackgroundColor(getResources().getColor(R.color.colorked));
-
         txtcolked8.setBackgroundColor(getResources().getColor(R.color.colorked));
+
+        linearLayout1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick9_1();
+            }
+        });
+        linearLayout2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick9_2();
+            }
+        });
+        linearLayout3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick9_3();
+            }
+        });
+        linearLayout4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick9_4();
+            }
+        });
+        linearLayout5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick9_5();
+            }
+        });
+        linearLayout6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick9_6();
+            }
+        });
+        linearLayout7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick9_7();
+            }
+        });
+        linearLayout8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Sick_sick9_8();
+            }
+        });
 
 
     }
@@ -2313,7 +2672,7 @@ public class Datasick1Fragment extends Fragment {
             txtCmain2.setTextSize(15);
             imagesA2.setBackgroundResource(R.drawable.dow);
             txtCmain2.setText("");
-            imagesB2.setBackgroundResource(R.drawable.whileee);
+            imagesB2.setBackgroundResource(0);
             num2 = "1";
         }
     }
@@ -2349,7 +2708,7 @@ public class Datasick1Fragment extends Fragment {
         num5 = num5+"1";
         imagesA5.setBackgroundResource(R.drawable.up);
         txtCmain5.setTextSize(20);
-        txtCmain5.setText("      \tขในผู้ป่วยท้องเดินชนิดเฉียบพลันภาวะแทรกซ้อนที่สำคัญคือ ภาวะขาดน้ำและเกลือแร่ ซึ่งอาจทำให้เกิดภาวะช็อก ภาวะเลือดเป็นกรด ภาวะโพแทสเซียมในเลือดต่ำ ภาวะโซเดียมในเลือดต่ำ เป็นอันตรายถึงเสียชีวิตได้ ความรุนแรงของโรคขึ้นกับขนาดของภาวะขาด น้ำเป็นสำคัญ\n" +
+        txtCmain5.setText("      \tในผู้ป่วยท้องเดินชนิดเฉียบพลันภาวะแทรกซ้อนที่สำคัญคือ ภาวะขาดน้ำและเกลือแร่ ซึ่งอาจทำให้เกิดภาวะช็อก ภาวะเลือดเป็นกรด ภาวะโพแทสเซียมในเลือดต่ำ ภาวะโซเดียมในเลือดต่ำ เป็นอันตรายถึงเสียชีวิตได้ ความรุนแรงของโรคขึ้นกับขนาดของภาวะขาด น้ำเป็นสำคัญ\n" +
                 "      \tภาวะขาดน้ำ สามารถแบ่งออกเป็น 3 ขนาด ได้แก่\n" +
                 "      \t1. ภาวะขาดน้ำเล็กน้อย (mild dehydration) น้ำหนักตัวลดประมาณร้อยละ 5 ผู้ป่วยเริ่มรู้สึกกระหายน้ำและอ่อนเพลียเล็กน้อย แต่อาการทั่วไปดี หน้าตาแจ่มใสเดินได้ชีพจรและความดันเลือดอยู่ในเกณฑ์ปกติ\n" +
                 "      \t2. ภาวะขาดน้ำปานกลาง (moderate dehydration) น้ำหนักตัวลดประมาณร้อยละ 5-10 ผู้ป่วยจะรู้สึกเพลียมาก เดินแทบไม่ไหว แต่ยังนั่งได้ และยังรู้สึกตัวดี เริ่มมีอาการตาโป (ตาลึก) ปากแห้ง ผิวหนังเที่ยวและขาด ความยืดหยุ่น ชีพจรเบาเร็ว ความดันต่ำ ในทารกนอกจากอาการดังกล่าวแล้ว ยังพบว่า กระหม่อมนุ่ม และท่าทางเชื่องซึม ไม่วิ่งเล่นเหมือนปกติ\n" +
@@ -2390,7 +2749,7 @@ public class Datasick1Fragment extends Fragment {
             txtCmain6.setTextSize(15);
             imagesA6.setBackgroundResource(R.drawable.dow);
             txtCmain6.setText("");
-            imagesB6.setBackgroundResource(R.drawable.whileee);
+            imagesB6.setBackgroundResource(0);
             num6 = "1";
         }
     }
@@ -2479,6 +2838,20 @@ public class Datasick1Fragment extends Fragment {
         imagesB6 = view.findViewById(R.id.imagesB6);
         imagesB7 = view.findViewById(R.id.imagesB7);
         imagesB8 = view.findViewById(R.id.imagesB8);
+
+
+        linearLayout1 = view.findViewById(R.id.llsick1);
+        linearLayout2 = view.findViewById(R.id.llsick2);
+        linearLayout3 = view.findViewById(R.id.llsick3);
+        linearLayout4 = view.findViewById(R.id.llsick4);
+        linearLayout5 = view.findViewById(R.id.llsick5);
+        linearLayout6 = view.findViewById(R.id.llsick6);
+        linearLayout7 = view.findViewById(R.id.llsick7);
+        linearLayout8 = view.findViewById(R.id.llsick8);
+
+
+
+
     }
     private void creatrToober() {
         //    Create Toobar

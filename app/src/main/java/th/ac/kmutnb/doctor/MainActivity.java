@@ -1,6 +1,8 @@
 package th.ac.kmutnb.doctor;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
@@ -16,23 +18,40 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        Intent intent = getIntent();
-//
-//        if (intent.hasExtra("index")) {
-//            num = getIntent().getExtras().getString("index");
-//
-//        } else {
-//            // Do something else
-//        }
-//        String txt = getIntent().getExtras().getString("dey");
-        //num = getIntent().getExtras().getString("indix");
-        //Log.d("26JanV1", "num    " + num);
-
 //      Addfragment
         if (savedInstanceState == null) {
-            //MainFragment mainFragment = MainFragment.newInstance("5678",num);
+
             getSupportFragmentManager().beginTransaction().add(R.id.mainFramement, new MainFragment()).commit();
         }
 
     }//Main method
+
+
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder dialog= new AlertDialog.Builder(this);
+        dialog.setTitle("Exit");
+        dialog.setIcon(R.drawable.ic_action_exit);
+        dialog.setCancelable(true);
+        dialog.setMessage("Do you want to exit?");
+        dialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
+            }
+        });
+
+        dialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+
+        dialog.show();
+
+
+
+    }
+
+
+
 } //main Class

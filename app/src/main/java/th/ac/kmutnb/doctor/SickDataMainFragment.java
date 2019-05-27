@@ -40,7 +40,7 @@ public class SickDataMainFragment extends Fragment {
         View view =inflater.inflate(R.layout.fragment_sick_data_main, container, false);
         loadList = (ListView) view.findViewById(R.id.lvsickdata);
         arrayList = new ArrayList<>();
-        String[] string = {"ไอ", "น้ำมูกไหล", "ปวดศรีษะ","มีไข้","เป็นแผล","ก้างติดคอ","ผดคันจากอากาศร้อน","ปวดเมื่อยจากการออกกำลังกาย","รังแค"};
+        String[] string = {"ไอ", "น้ำมูกไหล", "ปวดศีรษะ","มีไข้","แผลสด","ก้างติดคอ","ผดคันจากอากาศร้อน","ปวดเมื่อยจากการออกกำลังกาย","รังแค"};
 
 
         adapter = new ArrayAdapter<String>(this.context,android.R.layout.simple_list_item_1,string);

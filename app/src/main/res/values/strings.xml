@@ -15,24 +15,10 @@
     <string name="sickdata">อาการเบื้องต้น</string>
     <string name="info">info</string>
 
-    <string name="s1">ไข้หวัด</string>
-    <string name="s2">เวียนศีรษะ</string>
-    <string name="s3">ภูมิแพ้</string>
-    <string name="s4">ขาดวิตามิน</string>
-    <string name="s5">ไมเกรน</string>
-    <string name="s6">ท้องร่วง</string>
-    <string name="s7">อีสุกอีใส</string>
-    <string name="s8">อีดำอีแดง</string>
-    <string name="s9">ไมเกรน</string>
-    <string name="s10">สายตาผิดปกติ</string>
-    <string name="s11">หนังตาอักเสบ</string>
-    <string name="s12">ถุงน้ำตาอักเสบ</string>
-    <string name="s13">กุ้งยิง</string>
-    <string name="s14">ไซนัสอักเสบ</string>
-    <string name="s15">โรคขาดวิตามินเอ</string>
 
     <string name="ss1">กดที่นี่เพื่อตรวจโรค</string>
     <string name="ss2">ปวดศรีษะ</string>
     <string name="title_activity_datasick">DatasickActivity</string>
     <string name="title_activity_sick_data">SickDataActivity</string>
+    <string name="title_activity_splash_screen">SplashScreenActivity</string>
 </resources>
