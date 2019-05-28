@@ -18,6 +18,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 
 /**
@@ -29,7 +30,8 @@ public class RegisterFragment extends Fragment {
     private String nameString ,surnameString , genderString, heightString, weightString,ageString, userString , passwordString ;
 
     private boolean genderBoolean = true, heightABoolean = true , weightABoolean = true , ageABoolena = true;
-    private String urlPHP = "https://www.androidthai.in.th/sam/addData.php";
+    String urlPHP = "https://www.androidthai.in.th/sam/addData.php",s="0",ss,num;
+    //private String urlPHP = "https://www.androidthai.in.th/sam/addData.php?isAdd=true",s="0";
     public RegisterFragment() {
         // Required empty public constructor
     }
@@ -38,8 +40,6 @@ public class RegisterFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         creatrToober();
-
-
         // about gender
         RadioGroup radioGroup = getView().findViewById(R.id.redGender);
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -151,10 +151,31 @@ public class RegisterFragment extends Fragment {
 
         if(item.getItemId() == R.id.itemUpload) {
             checkValue();
+            if (s.equals("0")) {
+                Log.d("26JanV1", "sssssssssssssssssss    "+ s );
+                Log.d("26JanV1", "heightStrings    " + nameString +surnameString + genderString+ heightString+ weightString+ageString+ userString + passwordString  );
 
 
-            Log.d("26JanV1", "heightStrings    " + nameString +surnameString + genderString+ heightString+ weightString+ageString+ userString + passwordString  );
-            return true;
+                urlPHP = "https://www.androidthai.in.th/sam/addData.php?isAdd=true"+"&Name="+nameString+"&Surname="+surnameString+"&Gender="+genderString+"&Height="+heightString
+                        +"&Weight="+weightString+"&Age="+ageString+"&User="+userString+"&Password="+passwordString;
+                PostUserToServer postUserToServer = new PostUserToServer(getActivity());
+                postUserToServer.execute(nameString, surnameString, genderString, heightString, weightString, ageString, userString, passwordString, urlPHP);
+                ss=postUserToServer.getnum();
+                Log.d("26JanV1", "tytytytytytytytyt    "+ ss );
+                ss = null;
+                Toast.makeText(getActivity(), "Register Success",Toast.LENGTH_LONG).show();
+                getActivity().getSupportFragmentManager().popBackStack();
+
+
+            } else {
+
+                Toast.makeText(getActivity(), "Connot Register",Toast.LENGTH_SHORT).show();
+                s = "0";
+            }
+            Log.d("26JanV1", "heightStringssssss    "+ s );
+
+
+            //return true;
         }
 
 
@@ -183,19 +204,19 @@ public class RegisterFragment extends Fragment {
 
         if (nameString.isEmpty() || surnameString.isEmpty() || userString.isEmpty() || passwordString.isEmpty()) {
 //            Have Space
-            myAlert.normalDialog("Have Space", "Please Faill Every Blank");
+            myAlert.normalDialog("Have Space", "Please Faill Every Blank");s = "1";
         } else if (genderBoolean) {
 //            Non Choose Gender
-            myAlert.normalDialog("Non choose Gender", "Please Choose Male or Female");
+            myAlert.normalDialog("Non choose Gender", "Please Choose Male or Female");s = "1";
 
         } else if (heightABoolean) {
-            myAlert.normalDialog("Non Choose Height", "Please Choose Height");
+            myAlert.normalDialog("Non Choose Height", "Please Choose Height");s = "1";
 
         } else if (weightABoolean) {
-            myAlert.normalDialog("Non Choose Weight", "Please Choose Weight");
+            myAlert.normalDialog("Non Choose Weight", "Please Choose Weight");s = "1";
 
         } else if (ageABoolena) {
-            myAlert.normalDialog("Non Choose Age", "Please Choose Age");
+            myAlert.normalDialog("Non Choose Age", "Please Choose Age");s = "1";
         }
     }
 
