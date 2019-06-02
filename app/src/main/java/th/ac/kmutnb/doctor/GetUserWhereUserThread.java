@@ -30,7 +30,7 @@ public class GetUserWhereUserThread extends AsyncTask<String,Void,String> {
             Request.Builder builder = new Request.Builder();
             Request request = builder.url(strings[1]).post(requestBody).build();
             Response response = okHttpClient.newCall(request).execute();
-            //Log.d("26JanV1", "bbbbbbbbbbbbbbbb    " +response.body().string());
+
             return response.body().string();
            // Log.d("26JanV1", "bbbbbbbbbbbbbbbb    " +response.body().string());
 

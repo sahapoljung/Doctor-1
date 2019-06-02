@@ -42,6 +42,9 @@ public class MainFragment extends Fragment {
 
             SharedPreferences sharedPreferences = getActivity().getSharedPreferences("User", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPreferences.edit();
+
+            Log.d("26JanV1", "editor==>" + sharedPreferences);
+
             editor.clear().commit();
         } else {
             // Do something else
@@ -116,7 +119,7 @@ public class MainFragment extends Fragment {
                         getUserWhereUserThread.execute(user, urlPHP);
                         String json = getUserWhereUserThread.get();
                         Log.d("26JanV1", "json==>" + json);
-                        if (json.equals("nulll")) {
+                        if (json.equals("null")) {
                             myAlert.normalDialog("User False","No "+user+" In My Data" );
                         }
                         else {

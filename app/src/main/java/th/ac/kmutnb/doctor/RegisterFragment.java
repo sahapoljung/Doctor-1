@@ -15,10 +15,12 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 
 /**
@@ -27,11 +29,14 @@ import android.widget.Toast;
 public class RegisterFragment extends Fragment {
 
     //Explicit
-    private String nameString ,surnameString , genderString, heightString, weightString,ageString, userString , passwordString ;
 
-    private boolean genderBoolean = true, heightABoolean = true , weightABoolean = true , ageABoolena = true;
-    String urlPHP = "https://www.androidthai.in.th/sam/addData.php",s="0",ss,num;
-    //private String urlPHP = "https://www.androidthai.in.th/sam/addData.php?isAdd=true",s="0";
+
+    private String nameString, surnameString, genderString, heightString, weightString, ageString, userString, passwordString;
+    private boolean genderBoolean = true, heightABoolean = true, weightABoolean = true, ageABoolena = true;
+    String urlAddUserPHP, urladdDataPHP, urlreedPHP = "https://www.androidthai.in.th/sam/getUserWhereUserSam.php";
+
+    String s = "0", ss, num;
+
     public RegisterFragment() {
         // Required empty public constructor
     }
@@ -40,6 +45,7 @@ public class RegisterFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         creatrToober();
+        ss = "1";
         // about gender
         RadioGroup radioGroup = getView().findViewById(R.id.redGender);
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -59,7 +65,7 @@ public class RegisterFragment extends Fragment {
 
         //        about Height
         Spinner heightspinner = getView().findViewById(R.id.spnHeight);
-        final String[] heightStrings = {"Pleass Choose Height","0-150","151-170","Over 170"};
+        final String[] heightStrings = {"Pleass Choose Height", "0-150", "151-170", "Over 170"};
         ArrayAdapter<String> heightStringArrayAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, heightStrings);
         heightspinner.setAdapter(heightStringArrayAdapter);
         heightspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -106,7 +112,7 @@ public class RegisterFragment extends Fragment {
         });
 //          about age
         Spinner agespinner = getView().findViewById(R.id.spnAge);
-        final String[] ageStrings = {"Pleass Choose age", "1-10", "11-20", "21-30", "31-40","41-50","51-60","Over 60"};
+        final String[] ageStrings = {"Pleass Choose age", "1-10", "11-20", "21-30", "31-40", "41-50", "51-60", "Over 60"};
         ArrayAdapter<String> ageStringArrayAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, ageStrings);
         agespinner.setAdapter(ageStringArrayAdapter);
         agespinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -131,7 +137,7 @@ public class RegisterFragment extends Fragment {
     private void creatrToober() {
         //    Create Toobar
         Toolbar toolbar = getView().findViewById(R.id.toolberRegister);
-        ((MainActivity)getActivity()).setSupportActionBar(toolbar);
+        ((MainActivity) getActivity()).setSupportActionBar(toolbar);
         ((MainActivity) getActivity()).getSupportActionBar().setTitle(getString(R.string.new_register));
         ((MainActivity) getActivity()).getSupportActionBar().setHomeButtonEnabled(true);//ทำปุ่มย้อนกลับมุมบน
         ((MainActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true); //ทำปุ่มย้อนกลับมุมบน
@@ -149,37 +155,56 @@ public class RegisterFragment extends Fragment {
     public boolean onOptionsItemSelected(MenuItem item) {
 
 
-        if(item.getItemId() == R.id.itemUpload) {
+        if (item.getItemId() == R.id.itemUpload) {
             checkValue();
-            if (s.equals("0")) {
-                Log.d("26JanV1", "sssssssssssssssssss    "+ s );
-                Log.d("26JanV1", "heightStrings    " + nameString +surnameString + genderString+ heightString+ weightString+ageString+ userString + passwordString  );
-
-
-                urlPHP = "https://www.androidthai.in.th/sam/addData.php?isAdd=true"+"&Name="+nameString+"&Surname="+surnameString+"&Gender="+genderString+"&Height="+heightString
-                        +"&Weight="+weightString+"&Age="+ageString+"&User="+userString+"&Password="+passwordString;
-                PostUserToServer postUserToServer = new PostUserToServer(getActivity());
-                postUserToServer.execute(nameString, surnameString, genderString, heightString, weightString, ageString, userString, passwordString, urlPHP);
-                ss=postUserToServer.getnum();
-                Log.d("26JanV1", "tytytytytytytytyt    "+ ss );
-                ss = null;
-                Toast.makeText(getActivity(), "Register Success",Toast.LENGTH_LONG).show();
-                getActivity().getSupportFragmentManager().popBackStack();
-
-
-            } else {
-
-                Toast.makeText(getActivity(), "Connot Register",Toast.LENGTH_SHORT).show();
-                s = "0";
-            }
-            Log.d("26JanV1", "heightStringssssss    "+ s );
-
-
+            addUser();
+            //Log.d("26JanV1", "heightStringssssss    "+ s );
             //return true;
         }
 
-
         return super.onOptionsItemSelected(item);
+    }
+
+    private void addUser() {
+        if (s.equals("0")) {
+
+            urlAddUserPHP = "https://www.androidthai.in.th/sam/addUser.php?isAdd=true" + "&Name=" + nameString + "&Surname=" + surnameString + "&Gender=" + genderString + "&Height=" + heightString
+                    + "&Weight=" + weightString + "&Age=" + ageString + "&User=" + userString + "&Password=" + passwordString;
+
+            //urlPHP = "https://www.androidthai.in.th/sam/addUser.php";
+
+            AddUserToServer addUserToServer = new AddUserToServer(getActivity());
+            addUserToServer.execute(nameString, surnameString, genderString, heightString, weightString, ageString, userString, passwordString, urlAddUserPHP);
+            //addUserToServer.execute(urlPHP);
+
+            Toast.makeText(getActivity(), "Register Success", Toast.LENGTH_LONG).show();
+            addData();
+            getActivity().getSupportFragmentManager().popBackStack();
+
+        } else {
+            Toast.makeText(getActivity(), "Connot Register", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void addData() {
+        try {
+            GetUserWhereUserThread getUserWhereUserThread = new GetUserWhereUserThread(getActivity());
+            getUserWhereUserThread.execute(userString, urlreedPHP);
+            String json = getUserWhereUserThread.get();
+
+            JSONArray jsonArray = new JSONArray(json);
+            JSONObject jsonObject = jsonArray.getJSONObject(0);
+            String k;
+            k = jsonObject.getString("id");
+            urladdDataPHP = "https://www.androidthai.in.th/sam/addData.php?isAdd=true" + "&id=" + k;
+            AddDataToServer addDataToServer = new AddDataToServer(getActivity());
+            addDataToServer.execute(k, urladdDataPHP);
+
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+        }
     }
 
     // ทั้งหมดสำหรับหารเช็คว่าใส่ครบทุกช่องหรือไม่
@@ -204,26 +229,31 @@ public class RegisterFragment extends Fragment {
 
         if (nameString.isEmpty() || surnameString.isEmpty() || userString.isEmpty() || passwordString.isEmpty()) {
 //            Have Space
-            myAlert.normalDialog("Have Space", "Please Faill Every Blank");s = "1";
+            myAlert.normalDialog("Have Space", "Please Faill Every Blank");
+            s = "1";
         } else if (genderBoolean) {
 //            Non Choose Gender
-            myAlert.normalDialog("Non choose Gender", "Please Choose Male or Female");s = "1";
+            myAlert.normalDialog("Non choose Gender", "Please Choose Male or Female");
+            s = "1";
 
         } else if (heightABoolean) {
-            myAlert.normalDialog("Non Choose Height", "Please Choose Height");s = "1";
+            myAlert.normalDialog("Non Choose Height", "Please Choose Height");
+            s = "1";
 
         } else if (weightABoolean) {
-            myAlert.normalDialog("Non Choose Weight", "Please Choose Weight");s = "1";
+            myAlert.normalDialog("Non Choose Weight", "Please Choose Weight");
+            s = "1";
 
         } else if (ageABoolena) {
-            myAlert.normalDialog("Non Choose Age", "Please Choose Age");s = "1";
+            myAlert.normalDialog("Non Choose Age", "Please Choose Age");
+            s = "1";
         }
     }
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
-        inflater.inflate(R.menu.menu_register,menu );
+        inflater.inflate(R.menu.menu_register, menu);
     }
 
     @Override

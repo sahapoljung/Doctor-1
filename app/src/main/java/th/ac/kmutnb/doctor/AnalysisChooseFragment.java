@@ -1,7 +1,9 @@
 package th.ac.kmutnb.doctor;
 
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -14,6 +16,9 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,7 +28,7 @@ public class AnalysisChooseFragment extends Fragment implements View.OnClickList
     private int index;
     private String in ="0",num, a="01",b="001",c="0001",d="00001",e="000001",f="0000001",g="00000001";
     private String six,data;
-    private String datanum;
+    private String datanum,dataAddnum;
 
     public AnalysisChooseFragment() {
         // Required empty public constructor
@@ -43,6 +48,7 @@ public class AnalysisChooseFragment extends Fragment implements View.OnClickList
 
 
         if (in.equals("0")) {textView.setText("คุณมีอาการคัดจมูก แน่นจมูก หรือมีน้ำมูกไหล ใช่หรือไม่");}//1&2
+
     }
     private void main1() {
 
@@ -103,6 +109,7 @@ public class AnalysisChooseFragment extends Fragment implements View.OnClickList
 
     }
     private void SetTxt() {
+
         Button button1 = getView().findViewById(R.id.btnYes);
         Button button2 = getView().findViewById(R.id.btnNo);
         button1.setText("");
@@ -112,8 +119,11 @@ public class AnalysisChooseFragment extends Fragment implements View.OnClickList
         Intent intent = new Intent(new Intent(getActivity(), AnaFinalActivity.class));
         intent.putExtra("data1", data);
         intent.putExtra("numdata1",datanum );
+        intent.putExtra("dataAddnum",dataAddnum );
         startActivity(intent);
         getActivity().finish();
+
+
     }
     //           1&2
 
@@ -150,6 +160,8 @@ public class AnalysisChooseFragment extends Fragment implements View.OnClickList
             if (count ==3||count == 4||count==5) { datanum = "2"; }
             if (count == 6||count==7) { datanum = "3"; }
             data = "ไข้หวัด";
+            dataAddnum = "1";
+
             SetTxt();
         }
 
@@ -163,6 +175,7 @@ public class AnalysisChooseFragment extends Fragment implements View.OnClickList
             if (count == 1) { datanum = "1";  }
             if (count == 2) { datanum = "2"; }
             if (count == 3) {  datanum= "3"; }
+            dataAddnum = "2";
             data = "หวัดภูมิแพ้";
             SetTxt();
         }
@@ -191,6 +204,7 @@ public class AnalysisChooseFragment extends Fragment implements View.OnClickList
             if (count == 2||count==3) { datanum = "2"; }
             if (count == 4||count==5) { datanum = "3"; }
             data = "บ้านหมุนจากการเปลี่ยนท่า";
+            dataAddnum = "3";
             SetTxt();
         }
 
@@ -219,6 +233,7 @@ public class AnalysisChooseFragment extends Fragment implements View.OnClickList
             if (count == 4||count==5||count ==3) {  datanum= "2"; }
             if (count == 6||count==7) { datanum = "3"; }
             data = "ไมเกรน";
+            dataAddnum = "4";
             SetTxt();
         }
     }
@@ -248,7 +263,9 @@ public class AnalysisChooseFragment extends Fragment implements View.OnClickList
             if (count == 3||count==4) { datanum = "2"; }
             if (count == 5) { datanum = "3"; }
             data = "โรคขาดวิตามินเอ หรือโรคเกล็ดกระดี่ขึ้นตา";
+            dataAddnum = "5";
             SetTxt();
+
         }
 
     }
@@ -286,6 +303,7 @@ public class AnalysisChooseFragment extends Fragment implements View.OnClickList
                 datanum = "3";
             }
             data = "โรคกระเพาะปัสสาวะอักเสบ";
+            dataAddnum = "6";
             SetTxt();
 
     }
@@ -313,6 +331,7 @@ public class AnalysisChooseFragment extends Fragment implements View.OnClickList
             if (count == 3) { datanum = "2"; }
             if (count == 4||count==5) { datanum = "3"; }
             data = "โรคกระเพาะอักเสบ";
+            dataAddnum = "7";
             SetTxt();
         }
     }
@@ -332,6 +351,7 @@ public class AnalysisChooseFragment extends Fragment implements View.OnClickList
             if (count == 2) { datanum = "2"; }
             if (count == 3) { datanum = "3"; }
             data = "โรคขาดวิตามินซีหรือโรคลักปิดลักเปิด";
+            dataAddnum = "8";
             SetTxt();
         }
     }
@@ -354,6 +374,7 @@ public class AnalysisChooseFragment extends Fragment implements View.OnClickList
             if (count == 1) {datanum  = "1"; }
             if (count == 2) { datanum = "2"; }
             if (count == 3) {  datanum= "3"; }
+            dataAddnum = "9";
             data = "โรคท้องเดินหรืออุจจาระร่วง";
             SetTxt();
         }
@@ -362,7 +383,8 @@ public class AnalysisChooseFragment extends Fragment implements View.OnClickList
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
+
         return inflater.inflate(R.layout.fragment_analysis_choose, container, false);
     }
     @Override

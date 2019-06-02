@@ -20,9 +20,9 @@ import org.json.JSONObject;
 
 public class DocTorActivity extends AppCompatActivity {
 
-    private String idString ,del=null;
+     String idString ,del=null ;
     private String urlPHP = "https://www.androidthai.in.th/sam/getUserWhereIdSam.php";
-    private String nameString , surnameString,index="1",num;
+    private String nameString , surnameString,index="1",num,IdStr;
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle actionBarDrawerToggle;
 
@@ -33,14 +33,16 @@ public class DocTorActivity extends AppCompatActivity {
 
 
 
-            getUser();
+
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().add(R.id.contentDoctorFragment, new AboutMeFragment()).commit();
 
         }
-
+//        Intent intent = new Intent(DocTorActivity.this, AnaFinalActivity.class);
+//        intent.putExtra("id",idString);
 //        หน้าแรก
+        getUser();
         aboutMeControllor();
 //       วินิจฉัย
         analysisControllor();
@@ -59,9 +61,32 @@ public class DocTorActivity extends AppCompatActivity {
         //LogoutControllor();
 
 
+        if (idString != null) {
+
+            HisControllor();
+        }
+
     }// Main Method
 
+    private void HisControllor() {
+        TextView textView = findViewById(R.id.txtHis);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                //getSupportFragmentManager().beginTransaction().replace(R.id.contentDoctorFragment, new DataSickFragment()).commit();
+                // drawerLayout.closeDrawers();
+                Intent intent = new Intent(DocTorActivity.this, HisActivity.class);
+               // Intent intent = new Intent(DocTorActivity.this, AnaFinalActivity.class);
+                //  Log.d("26JanV1", "id His1 ==>" + idString);
+                intent.putExtra("id",idString);
+
+                startActivity(intent);
+                drawerLayout.closeDrawers();
+
+            }
+        });
+    }
 
     private void InfoControllor() {
         TextView textView = findViewById(R.id.txtInfo);
@@ -153,6 +178,10 @@ public class DocTorActivity extends AppCompatActivity {
                // getSupportFragmentManager().beginTransaction().replace(R.id.contentDoctorFragment, new AnalysisChooseFragment()).commit();
 
                 Intent intent = new Intent(DocTorActivity.this, AnalysisActivity.class);
+
+
+                intent.putExtra("idString", IdStr);
+                Log.d("26JanV1", "idString   ==>" + IdStr);
                 startActivity(intent);
                 drawerLayout.closeDrawers();
 
@@ -213,6 +242,7 @@ public class DocTorActivity extends AppCompatActivity {
                 JSONObject jsonObject = jsonArray.getJSONObject(0);
                 nameString = jsonObject.getString("Name");
                 surnameString = jsonObject.getString("Surname");
+                IdStr = jsonObject.getString("id");
                 createToobar();
 
             } catch (Exception e) {
@@ -227,28 +257,10 @@ public class DocTorActivity extends AppCompatActivity {
             createToobar();
             // Do something else
         }
-//        idString = getIntent().getStringExtra("id");
-//        Log.d("26JanV1", "id Recive ==>" + idString);
-//
-//
-//            try {
-//
-//                GetUserWhereIdThread getUserWhereIdThread = new GetUserWhereIdThread(DocTorActivity.this);
-//                getUserWhereIdThread.execute(idString, urlPHP);
-//                String json = getUserWhereIdThread.get();
-//                Log.d("26JanV1", "json Doctor ==>" + json);
-//
-//                JSONArray jsonArray = new JSONArray(json);
-//                JSONObject jsonObject = jsonArray.getJSONObject(0);
-//                nameString = jsonObject.getString("Name");
-//                surnameString = jsonObject.getString("Surname");
-//                createToobar();
-//
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//            }
 
 
+//        Intent intent1 = new Intent(DocTorActivity.this, AnaFinalActivity.class);
+//        intent.putExtra("id",idString);
 
 
     }
