@@ -13,12 +13,16 @@ import android.widget.TextView;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 public class AnaFinalActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private String datastr;
+    private String datastr,formattedDate,numm,urlPost="https://www.androidthai.in.th/sam/postData.php";
     private String dataint, dataAddnum, idString, urlPHP = "https://www.androidthai.in.th/sam/getDataWhereIdSam.php";
     private String data1, data2, data3;
-
+    private String i1,i2,i3,i4,i5,i6,i7,i8, i9, i10, i11, i12, i13, i14, i15;
+    int num;
     String[] showsick = {"", "", "", "", "", "", ""}, showday = {"", "", "", "", "", "", ""}, updata = new String[8];
 
 
@@ -37,20 +41,9 @@ public class AnaFinalActivity extends AppCompatActivity implements View.OnClickL
         TextView textView4 = findViewById(R.id.txtdatafinol2);
         //อาการเบื้องต้น
         TextView textView5 = findViewById(R.id.txtdatafinol3);
-        dataint = getIntent().getExtras().getString("numdata1");
         datastr = getIntent().getExtras().getString("data1");
-        dataAddnum = getIntent().getExtras().getString("dataAddnum");
-
-
-        SharedPreferences sharedPreferences = getSharedPreferences("User", Context.MODE_PRIVATE);
-        idString = sharedPreferences.getString("id", "");
-
-        Log.d("26JanV1", "idString   " + idString);
-        getUser();
-
-        Log.d("26JanV1", "in at Anlysissssss dataAddnum   " + dataAddnum);
-        Log.d("26JanV1", "in at Anlysissssss numdata   " + dataint);
-        Log.d("26JanV1", "in at Anlysissssss data1   " + datastr);
+        dataint = getIntent().getExtras().getString("numdata1");
+        Postdata();
 
         if (datastr.equals("ไข้หวัด")) {
             sick1();
@@ -91,6 +84,63 @@ public class AnaFinalActivity extends AppCompatActivity implements View.OnClickL
 
     }
 
+    private void Postdata() {
+
+        dataAddnum = getIntent().getExtras().getString("dataAddnum"); //หมายเลขโรค
+        //idString=getIntent().getExtras().getString("dataAddnum");
+
+        // num = Integer.parseInt(numm);
+        //num += 1;
+        Intent intent = getIntent();
+        if (intent.hasExtra("idString")) {
+            idString=getIntent().getExtras().getString("idString");
+            getUser();
+
+            num=Integer.parseInt(numm);
+            num = num + 1;
+            if(num>=8){ num = 1;}
+            numm = Integer.toString(num);
+            Calendar c = Calendar.getInstance();
+            SimpleDateFormat df = new SimpleDateFormat("HH:mm:ss yyyy-MM-dd");
+            formattedDate = df.format(c.getTime());
+
+            Log.d("26JanV1", " num   " + numm);
+            Log.d("26JanV1", " dataAddnum   " + dataAddnum);
+            Log.d("26JanV1", " idString     " + idString);
+
+
+            for (int i = 0; i < 8; i++) {
+                if (num-1==i) { showsick[i] = dataAddnum;showday[i] = formattedDate; }
+                if (i == 0) { i1 = numm;  }
+                else if (i == 1) { i2=showsick[i-1];i3=showday[i-1];}
+                else if (i == 2) { i4=showsick[i-1];i5=showday[i-1];}
+                else if (i == 3) { i6=showsick[i-1];i7=showday[i-1];}
+                else if (i == 4) { i8=showsick[i-1];i9=showday[i-1];}
+                else if (i == 5) { i10=showsick[i-1];i11=showday[i-1];}
+                else if (i == 6) { i12=showsick[i-1];i13=showday[i-1];}
+                else if (i == 7) { i14=showsick[i-1];i15=showday[i-1];}
+
+            }
+            urlPost="https://www.androidthai.in.th/sam/postData.php";
+            PostDataToServer postDataToServer = new PostDataToServer(AnaFinalActivity.this);
+            postDataToServer.execute(idString, i1,i2,i3,i4,i5,i6,i7,i8, i9, i10, i11, i12, i13, i14, i15,urlPost);
+
+
+
+        } else {
+
+
+            Log.d("26JanV1", " Postdata   idString" + idString);
+            // Do something else
+        }
+
+
+
+
+
+    }
+
+
     private void getUser() {
         String[] day = {"day1", "day2", "day3", "day4", "day5", "day6", "day7"}, sick = {"sick1", "sick2", "sick3", "sick4", "sick5", "sick6", "sick7"};
 
@@ -104,6 +154,7 @@ public class AnaFinalActivity extends AppCompatActivity implements View.OnClickL
 
             JSONArray jsonArray = new JSONArray(json);
             JSONObject jsonObject = jsonArray.getJSONObject(0);
+            numm = jsonObject.getString("num");
             for (int i = 0; i < 7; i++) {
                 showsick[i] = jsonObject.getString(sick[i]);
                 showday[i] = jsonObject.getString(day[i]);

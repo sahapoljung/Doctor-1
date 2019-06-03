@@ -28,7 +28,7 @@ public class AnalysisChooseFragment extends Fragment implements View.OnClickList
     private int index;
     private String in ="0",num, a="01",b="001",c="0001",d="00001",e="000001",f="0000001",g="00000001";
     private String six,data;
-    private String datanum,dataAddnum;
+    private String datanum,dataAddnum,idString;
 
     public AnalysisChooseFragment() {
         // Required empty public constructor
@@ -110,6 +110,8 @@ public class AnalysisChooseFragment extends Fragment implements View.OnClickList
     }
     private void SetTxt() {
 
+       // idString=getActivity().getIntent().getExtras().getString("idString");
+
         Button button1 = getView().findViewById(R.id.btnYes);
         Button button2 = getView().findViewById(R.id.btnNo);
         button1.setText("");
@@ -117,6 +119,15 @@ public class AnalysisChooseFragment extends Fragment implements View.OnClickList
         Log.d("26JanV1", "in at Anlysis datanum" + datanum);
         Log.d("26JanV1", "in at Anlysis data" + data);
         Intent intent = new Intent(new Intent(getActivity(), AnaFinalActivity.class));
+        Intent intent1 = getActivity().getIntent();
+        if (intent1.hasExtra("idString")) {
+            idString=getActivity().getIntent().getExtras().getString("idString");
+            intent.putExtra("idString", idString);
+            Log.d("26JanV1", "in at Anlysis idString  " + idString);
+        } else {
+            Log.d("26JanV1", "in at Anlysis idString else " + idString);
+            // Do something else
+        }
         intent.putExtra("data1", data);
         intent.putExtra("numdata1",datanum );
         intent.putExtra("dataAddnum",dataAddnum );
@@ -383,7 +394,16 @@ public class AnalysisChooseFragment extends Fragment implements View.OnClickList
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        Intent intent = getActivity().getIntent();
 
+        if (intent.hasExtra("idString")) {
+            idString = getActivity().getIntent().getExtras().getString("idString");
+            Log.d("26JanV1", "in at Anlysis idString" + idString);
+
+        } else {
+            Log.d("26JanV1", "in at Anlysis idString" + idString);
+            // Do something else
+        }
 
         return inflater.inflate(R.layout.fragment_analysis_choose, container, false);
     }
@@ -393,12 +413,12 @@ public class AnalysisChooseFragment extends Fragment implements View.OnClickList
             case R.id.btnYes:
                 in = in+"1";
                 main1();
-                Log.d("26JanV1", "in at Anlysis ไรไร" + in);
+              //  Log.d("26JanV1", "in at Anlysis ไรไร" + in);
                 break;
             case R.id.btnNo:
                 in = in + "0";
                 main1();
-                Log.d("26JanV1", "in at Anlysis ไรไร" + in);
+              //  Log.d("26JanV1", "in at Anlysis ไรไร" + in);
                 break;
         }
     }

@@ -168,10 +168,10 @@ public class RegisterFragment extends Fragment {
     private void addUser() {
         if (s.equals("0")) {
 
-            urlAddUserPHP = "https://www.androidthai.in.th/sam/addUser.php?isAdd=true" + "&Name=" + nameString + "&Surname=" + surnameString + "&Gender=" + genderString + "&Height=" + heightString
-                    + "&Weight=" + weightString + "&Age=" + ageString + "&User=" + userString + "&Password=" + passwordString;
+            /*urlAddUserPHP = "https://www.androidthai.in.th/sam/addUser.php?isAdd=true" + "&Name=" + nameString + "&Surname=" + surnameString + "&Gender=" + genderString + "&Height=" + heightString
+                    + "&Weight=" + weightString + "&Age=" + ageString + "&User=" + userString + "&Password=" + passwordString;*/
 
-            //urlPHP = "https://www.androidthai.in.th/sam/addUser.php";
+            urlAddUserPHP = "https://www.androidthai.in.th/sam/addUser.php";
 
             AddUserToServer addUserToServer = new AddUserToServer(getActivity());
             addUserToServer.execute(nameString, surnameString, genderString, heightString, weightString, ageString, userString, passwordString, urlAddUserPHP);

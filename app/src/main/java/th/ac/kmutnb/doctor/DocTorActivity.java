@@ -20,7 +20,7 @@ import org.json.JSONObject;
 
 public class DocTorActivity extends AppCompatActivity {
 
-     String idString ,del=null ;
+     String idString ,del=null,idgo ;
     private String urlPHP = "https://www.androidthai.in.th/sam/getUserWhereIdSam.php";
     private String nameString , surnameString,index="1",num,IdStr;
     private DrawerLayout drawerLayout;
@@ -33,10 +33,12 @@ public class DocTorActivity extends AppCompatActivity {
 
 
 
-
+        getUser();
 
         if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().add(R.id.contentDoctorFragment, new AboutMeFragment()).commit();
+            AboutMeFragment aboutMeFragment = new AboutMeFragment();
+
+            getSupportFragmentManager().beginTransaction().add(R.id.contentDoctorFragment, aboutMeFragment).commit();
 
         }
 //        Intent intent = new Intent(DocTorActivity.this, AnaFinalActivity.class);
@@ -179,9 +181,9 @@ public class DocTorActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(DocTorActivity.this, AnalysisActivity.class);
 
-
+                Log.d("26JanV1", "analysisControllor   ==>" + IdStr);
                 intent.putExtra("idString", IdStr);
-                Log.d("26JanV1", "idString   ==>" + IdStr);
+               // Log.d("26JanV1", "idString   ==>" + IdStr);
                 startActivity(intent);
                 drawerLayout.closeDrawers();
 
@@ -230,6 +232,7 @@ public class DocTorActivity extends AppCompatActivity {
         Intent intent = getIntent();
         if (intent.hasExtra("id")) {
             idString = getIntent().getStringExtra("id");
+            idgo = idString;
             Log.d("26JanV1", "id Recive ==>" + idString);
             try {
 
@@ -243,6 +246,7 @@ public class DocTorActivity extends AppCompatActivity {
                 nameString = jsonObject.getString("Name");
                 surnameString = jsonObject.getString("Surname");
                 IdStr = jsonObject.getString("id");
+                Log.d("26JanV1", "IdStr   ==>" + IdStr);
                 createToobar();
 
             } catch (Exception e) {
