@@ -44,7 +44,6 @@ public class DocTorActivity extends AppCompatActivity {
 //        Intent intent = new Intent(DocTorActivity.this, AnaFinalActivity.class);
 //        intent.putExtra("id",idString);
 //        หน้าแรก
-        getUser();
         aboutMeControllor();
 //       วินิจฉัย
         analysisControllor();
@@ -76,11 +75,8 @@ public class DocTorActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                //getSupportFragmentManager().beginTransaction().replace(R.id.contentDoctorFragment, new DataSickFragment()).commit();
-                // drawerLayout.closeDrawers();
                 Intent intent = new Intent(DocTorActivity.this, HisActivity.class);
-               // Intent intent = new Intent(DocTorActivity.this, AnaFinalActivity.class);
-                //  Log.d("26JanV1", "id His1 ==>" + idString);
+
                 intent.putExtra("id",idString);
 
                 startActivity(intent);
@@ -181,7 +177,7 @@ public class DocTorActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(DocTorActivity.this, AnalysisActivity.class);
 
-                Log.d("26JanV1", "analysisControllor   ==>" + IdStr);
+             //   Log.d("26JanV1", "analysisControllor   ==>" + IdStr);
                 intent.putExtra("idString", IdStr);
                // Log.d("26JanV1", "idString   ==>" + IdStr);
                 startActivity(intent);
@@ -233,7 +229,7 @@ public class DocTorActivity extends AppCompatActivity {
         if (intent.hasExtra("id")) {
             idString = getIntent().getStringExtra("id");
             idgo = idString;
-            Log.d("26JanV1", "id Recive ==>" + idString);
+            //Log.d("26JanV1", "id Recive ==>" + idString);
             try {
 
                 GetUserWhereIdThread getUserWhereIdThread = new GetUserWhereIdThread(DocTorActivity.this);
@@ -246,7 +242,7 @@ public class DocTorActivity extends AppCompatActivity {
                 nameString = jsonObject.getString("Name");
                 surnameString = jsonObject.getString("Surname");
                 IdStr = jsonObject.getString("id");
-                Log.d("26JanV1", "IdStr   ==>" + IdStr);
+              //  Log.d("26JanV1", "IdStr   ==>" + IdStr);
                 createToobar();
 
             } catch (Exception e) {

@@ -196,13 +196,13 @@ public class RegisterFragment extends Fragment {
             JSONObject jsonObject = jsonArray.getJSONObject(0);
             String k;
             k = jsonObject.getString("id");
-            urladdDataPHP = "https://www.androidthai.in.th/sam/addData.php?isAdd=true" + "&id=" + k;
+            urladdDataPHP = "https://www.androidthai.in.th/sam/addData.php";
             AddDataToServer addDataToServer = new AddDataToServer(getActivity());
             addDataToServer.execute(k, urladdDataPHP);
 
 
         } catch (Exception e) {
-
+            Log.d("26JanV1", "Exception e  onTop==>" );
             e.printStackTrace();
         }
     }

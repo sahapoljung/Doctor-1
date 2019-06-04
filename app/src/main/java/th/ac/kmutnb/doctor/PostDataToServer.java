@@ -42,6 +42,12 @@ public class PostDataToServer extends AsyncTask<String,Void,String> {
                     .add("day6", strings[13])
                     .add("sick7", strings[14])
                     .add("day7", strings[15])
+                    .add("sick8", strings[16])
+                    .add("day8", strings[17])
+                    .add("sick9", strings[18])
+                    .add("day9", strings[19])
+                    .add("sick10", strings[20])
+                    .add("day10", strings[21])
                     .build();
           /*  Log.d("26JanV1", "0    " +strings[0]);
             Log.d("26JanV1", "1    " +strings[1]);
@@ -61,7 +67,7 @@ public class PostDataToServer extends AsyncTask<String,Void,String> {
             Log.d("26JanV1", "15    " +strings[15]);
             Log.d("26JanV1", "16    " +strings[16]);*/
             Request.Builder builder = new Request.Builder();
-            Request request = builder.url(strings[16]).post(requestBody).build();
+            Request request = builder.url(strings[22]).post(requestBody).build();
             Response response = okHttpClient.newCall(request).execute();
 
             return response.body().string();

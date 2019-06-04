@@ -18,15 +18,14 @@ import java.util.Calendar;
 
 public class AnaFinalActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private String datastr,formattedDate,numm,urlPost="https://www.androidthai.in.th/sam/postData.php";
+    private String datastr, formattedDate, numm, urlPost = "https://www.androidthai.in.th/sam/postData.php";
     private String dataint, dataAddnum, idString, urlPHP = "https://www.androidthai.in.th/sam/getDataWhereIdSam.php";
     private String data1, data2, data3;
-    private String i1,i2,i3,i4,i5,i6,i7,i8, i9, i10, i11, i12, i13, i14, i15;
-    int num;
-    String[] showsick = {"", "", "", "", "", "", ""}, showday = {"", "", "", "", "", "", ""}, updata = new String[8];
+    private String i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, i13, i14, i15, i16, i17, i18, i19, i20, i21;
+    int num,nom,Timesick;
+    String[] showsick = {"", "", "", "", "", "", "", "", "", ""}, showday = {"", "", "", "", "", "", "", "", "", ""}, updata = new String[8];
 
-
-//DocTorActivity.ExtraData
+    String sum,numday;
 
 
     @Override
@@ -43,8 +42,169 @@ public class AnaFinalActivity extends AppCompatActivity implements View.OnClickL
         TextView textView5 = findViewById(R.id.txtdatafinol3);
         datastr = getIntent().getExtras().getString("data1");
         dataint = getIntent().getExtras().getString("numdata1");
-        Postdata();
 
+
+        Intent intent = getIntent();
+        idString = getIntent().getExtras().getString("idString");
+        Log.d("26JanV1", "Don't ID idString   ==>"+idString);
+
+      try {
+              if (idString.equals(null)) {
+              } else {
+                  Postdata();
+                  TimeMain();
+              }
+
+
+      }catch (Exception e) {
+
+          Log.d("26JanV1", "Exception e  MAIN==>" );
+
+          e.printStackTrace();
+      }
+
+
+       // Postdata();
+
+       // getUser();
+
+     //   TimeMain();
+
+
+        // time();
+
+        sack(textView1, textView2, textView3, textView4, textView5);
+    }
+
+    private void TimeMain() {
+        int oum = Integer.parseInt(dataAddnum); //เลขโรค
+        int som = Integer.parseInt(sum),mum=0;        // จำนวนครั้งที่วินิจฉัย
+        som = som-1;
+        try {
+            for (int i = 0; i < 11; i++) {
+                Log.d("26JanV1", "showsick[i]  ==>" + showsick[i]);
+               // if (!showsick[i].equals("NULL")) {
+
+                for (int j = 0; j < 11; j++) { if(showsick[i].equals("NULL")){ mum = 1; }else { mum = 2;} } //เช็คว่ามี NULLหรือไม่
+
+
+                   // Log.d("26JanV1", "somsom  ==>" + som);
+                   // Log.d("26JanV1", "nom  ==>" + nom);
+                  //  Log.d("26JanV1", "showsick[nom]  ==>" + showsick[nom]);
+                   // Log.d("26JanV1", "showsick[som] ==>" + showsick[som]);
+                  //if (mum==1){som++;}else {som--;}
+                    if (dataAddnum.equals(showsick[som])) {
+                        String[] dayR = showday[som].split(" ", 2);
+                        String time11 = dayR[0];
+                        String day22 = dayR[1];
+                        int day1, time1, time2;
+                        String[] d = day22.split("-", 3);
+                        String day11111 = d[0];
+
+                        day1 = Integer.parseInt(day11111);
+                        Log.d("26JanV1", "day1==>" +  day1);
+                        //เวลาวินิจฉัยครั้งแรก
+                        String[] t = time11.split(":", 3);
+                        String time22 = t[0];
+                        String time33 = t[1];
+                       // Log.d("26JanV1", "time22==>" + time22);
+                        time1 = Integer.parseInt(time22);
+                        time2 = Integer.parseInt(time33);
+                        Log.d("26JanV1", "time1==>" + time1);
+                        Log.d("26JanV1", "time2==>" + time2);
+
+                        //int time1 = Integer.parseInt(showsick[nom - 1]);
+                        //numday = showday[som];
+                        //Log.d("26JanV1", "time1[i]  ==>" );
+                       // Log.d("26JanV1", "time2[i] ==>" + time2);
+                        time(day1, time1, time2);
+                    i=11;
+                    }
+
+                    if (som == 0) {
+                        if(mum==1){ i = 11;} else {som = 10;}
+                    }
+                som--;
+               // }
+
+            }
+        }catch (Exception e) {
+
+            Log.d("26JanV1", "Exception e  NUMM==>" );
+
+            e.printStackTrace();
+        }
+    }
+
+    private void time(int day1,int time1,int time2) {
+
+        int[] DayPerSick = {3, 14, 7, 3, 7, 7, 7, 7, 3};
+        int oum = Integer.parseInt(dataAddnum);
+        int timenew1,timenew2,daynew,sumtime1,sumtime2,sumday;
+        Timesick = DayPerSick[oum-1]*24;
+
+        Calendar c = Calendar.getInstance();
+        SimpleDateFormat df = new SimpleDateFormat("HH:mm:ss dd-MM-yyyy");
+        String formattedDate = df.format(c.getTime());
+        String[] dayR = formattedDate.split(" ", 2);
+        String time11 = dayR[0];
+        String day22 = dayR[1];
+
+        String[] d = day22.split("-", 3);
+        String day11111 = d[0];
+
+        daynew = Integer.parseInt(day11111);
+        Log.d("26JanV1", "daynew==>" +  daynew);
+        //เวลาวินิจฉัยครั้งแรก
+        String[] t = time11.split(":", 3);
+        String time22 = t[0];
+        String time33 = t[1];
+
+        timenew1 = Integer.parseInt(time22);
+        timenew2 = Integer.parseInt(time33);
+        Log.d("26JanV1", "timenew1==>" + timenew1);
+        Log.d("26JanV1", "timenew2==>" + timenew2);
+
+        sumday = (daynew - day1) * 24;
+       if(time1>=timenew1){
+
+           sumtime1 = time1 - timenew1;
+           if (sumday != 0) {
+               sumday = sumday - sumtime1;
+           }
+           else {
+               sumday = sumtime1;
+           }
+
+       }else {
+           sumtime1 = timenew1 - time1;
+           if (sumday != 0) {
+               sumday = sumday + sumtime1;
+           } else {
+               sumday = sumtime1;
+           }
+
+       }
+
+       int Timesic = Timesick - sumday;
+        String Out = Integer.toString(sumday/24);
+        MyAlert myAlert = new MyAlert(AnaFinalActivity.this);
+
+       if(Timesic<=0){
+           myAlert.normalDialog("คำเตือน", "ระบบพบว่า "+Out+" วันที่แล้วคุณเคยเป็น"+datastr+" ถ้าคุณเป็นต่อเนื่องจากครั้งที่แล้ว ควรไปพบแพทย์โดยด่วน แต่ถ้าคุณไม่ได้เป็นต่อเนื่องจากครั้งที่แล้ว ให้รักษาตามคำแนะนำเบื้องต้น");
+       }
+        Log.d("26JanV1", "sumday==>" + sumday);
+
+
+
+
+
+
+
+
+    }
+
+    private void sack(TextView textView1, TextView textView2, TextView textView3, TextView textView4, TextView textView5) {
         if (datastr.equals("ไข้หวัด")) {
             sick1();
         }
@@ -80,8 +240,6 @@ public class AnaFinalActivity extends AppCompatActivity implements View.OnClickL
 
         textView3.setOnClickListener((View.OnClickListener) this);
         textView4.setOnClickListener((View.OnClickListener) this);
-
-
     }
 
     private void Postdata() {
@@ -91,58 +249,94 @@ public class AnaFinalActivity extends AppCompatActivity implements View.OnClickL
 
         // num = Integer.parseInt(numm);
         //num += 1;
-        Intent intent = getIntent();
-        if (intent.hasExtra("idString")) {
-            idString=getIntent().getExtras().getString("idString");
-            getUser();
-
-            num=Integer.parseInt(numm);
-            num = num + 1;
-            if(num>=8){ num = 1;}
-            numm = Integer.toString(num);
-            Calendar c = Calendar.getInstance();
-            SimpleDateFormat df = new SimpleDateFormat("HH:mm:ss yyyy-MM-dd");
-            formattedDate = df.format(c.getTime());
-
-            Log.d("26JanV1", " num   " + numm);
-            Log.d("26JanV1", " dataAddnum   " + dataAddnum);
-            Log.d("26JanV1", " idString     " + idString);
+        try {
 
 
-            for (int i = 0; i < 8; i++) {
-                if (num-1==i) { showsick[i] = dataAddnum;showday[i] = formattedDate; }
-                if (i == 0) { i1 = numm;  }
-                else if (i == 1) { i2=showsick[i-1];i3=showday[i-1];}
-                else if (i == 2) { i4=showsick[i-1];i5=showday[i-1];}
-                else if (i == 3) { i6=showsick[i-1];i7=showday[i-1];}
-                else if (i == 4) { i8=showsick[i-1];i9=showday[i-1];}
-                else if (i == 5) { i10=showsick[i-1];i11=showday[i-1];}
-                else if (i == 6) { i12=showsick[i-1];i13=showday[i-1];}
-                else if (i == 7) { i14=showsick[i-1];i15=showday[i-1];}
+            Intent intent = getIntent();
+            if (intent.hasExtra("idString")) {
+                idString = getIntent().getExtras().getString("idString");
+                getUser();
 
+                num = Integer.parseInt(sum);
+                if (num == 10) { num = 0; }
+                num = num + 1;
+                //if (num >= 11) { num = 0; }
+               // numm = Integer.toString(num);
+                Calendar c = Calendar.getInstance();
+                SimpleDateFormat df = new SimpleDateFormat("HH:mm:ss dd-MM-yyyy");
+                formattedDate = df.format(c.getTime());
+
+                //Log.d("26JanV1", " num   " + numm);
+                Log.d("26JanV1", " dataAddnum   " + dataAddnum);
+                Log.d("26JanV1", " idString     " + idString);
+
+
+                for (int i = 0; i < 11; i++) {
+                    if (num - 1 == i) {
+                        showsick[i] = dataAddnum;
+                        showday[i] = formattedDate;
+                    }
+                    if (i == 0) {
+                        if (num >= 11) { num = 0;}
+                        numm = Integer.toString(num);
+                        i1 = numm;
+                    } else if (i == 1) {
+                        i2 = showsick[i - 1];
+                        i3 = showday[i - 1];
+                    } else if (i == 2) {
+                        i4 = showsick[i - 1];
+                        i5 = showday[i - 1];
+                    } else if (i == 3) {
+                        i6 = showsick[i - 1];
+                        i7 = showday[i - 1];
+                    } else if (i == 4) {
+                        i8 = showsick[i - 1];
+                        i9 = showday[i - 1];
+                    } else if (i == 5) {
+                        i10 = showsick[i - 1];
+                        i11 = showday[i - 1];
+                    } else if (i == 6) {
+                        i12 = showsick[i - 1];
+                        i13 = showday[i - 1];
+                    } else if (i == 7) {
+                        i14 = showsick[i - 1];
+                        i15 = showday[i - 1];
+                    } else if (i == 8) {
+                        i16 = showsick[i - 1];
+                        i17 = showday[i - 1];
+                    } else if (i == 9) {
+                        i18 = showsick[i - 1];
+                        i19 = showday[i - 1];
+                    } else if (i == 10) {
+                        i20 = showsick[i - 1];
+                        i21 = showday[i - 1];
+                    }
+
+                }
+                urlPost = "https://www.androidthai.in.th/sam/postData.php";
+                PostDataToServer postDataToServer = new PostDataToServer(AnaFinalActivity.this);
+                postDataToServer.execute(idString, i1, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12, i13, i14, i15, i16, i17, i18, i19, i20, i21, urlPost);
+
+
+            } else {
+
+
+                Log.d("26JanV1", " Postdata   idString" + idString);
+                // Do something else
             }
-            urlPost="https://www.androidthai.in.th/sam/postData.php";
-            PostDataToServer postDataToServer = new PostDataToServer(AnaFinalActivity.this);
-            postDataToServer.execute(idString, i1,i2,i3,i4,i5,i6,i7,i8, i9, i10, i11, i12, i13, i14, i15,urlPost);
+        }catch (Exception e) {
 
+            Log.d("26JanV1", "Exception e  POST==>" );
 
-
-        } else {
-
-
-            Log.d("26JanV1", " Postdata   idString" + idString);
-            // Do something else
+            e.printStackTrace();
         }
-
-
-
 
 
     }
 
 
     private void getUser() {
-        String[] day = {"day1", "day2", "day3", "day4", "day5", "day6", "day7"}, sick = {"sick1", "sick2", "sick3", "sick4", "sick5", "sick6", "sick7"};
+        String[] day = {"day1", "day2", "day3", "day4", "day5", "day6", "day7", "day8", "day9", "day10"}, sick = {"sick1", "sick2", "sick3", "sick4", "sick5", "sick6", "sick7", "sick8", "sick9", "sick10"};
 
         Log.d("26JanV1", "id Recive ==>" + idString);
         try {
@@ -154,8 +348,9 @@ public class AnaFinalActivity extends AppCompatActivity implements View.OnClickL
 
             JSONArray jsonArray = new JSONArray(json);
             JSONObject jsonObject = jsonArray.getJSONObject(0);
-            numm = jsonObject.getString("num");
-            for (int i = 0; i < 7; i++) {
+            sum = jsonObject.getString("num");
+            for (int i = 0; i < 10; i++) {
+
                 showsick[i] = jsonObject.getString(sick[i]);
                 showday[i] = jsonObject.getString(day[i]);
                 Log.d("26JanV1", "showsick[i]  ==>" + showsick[i]);
@@ -163,6 +358,7 @@ public class AnaFinalActivity extends AppCompatActivity implements View.OnClickL
             }
 
         } catch (Exception e) {
+            Log.d("26JanV1", "Exception e  getUser==>" );
             e.printStackTrace();
         }
 
@@ -188,8 +384,6 @@ public class AnaFinalActivity extends AppCompatActivity implements View.OnClickL
 
         }
     }
-
-
 
 
     private void sick9() {
