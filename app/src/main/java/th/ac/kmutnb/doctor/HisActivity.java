@@ -33,7 +33,10 @@ public class HisActivity extends AppCompatActivity {
         setContentView(R.layout.activity_his);
         getUser();
         ShowData();
+        for (int i=0; i < 10; i++) {
 
+            Log.d("26JanV1", "showday[i] showday[i]  " + showsick[i]);
+        }
 
         //   time();
 
@@ -44,31 +47,40 @@ public class HisActivity extends AppCompatActivity {
         int tempT,tempS;
         idtime = new String[]{"tvtime1", "tvtime2", "tvtime3", "tvtime4", "tvtime5", "tvtime6", "tvtime7", "tvtime8", "tvtime9", "tvtime10"};
         idsick = new String[]{"tvsick1", "tvsick2", "tvsick3", "tvsick4", "tvsick5", "tvsick6", "tvsick7", "tvsick8", "tvsick9", "tvsick10"};
-        try {
+        try {int sun = Integer.parseInt(sum),su=sun;
             for(int i=0; i<10; i++) {
-                int sun = Integer.parseInt(sum),su=sun;
+
                // Log.d("26JanV1", "Exception e  sun==>"+sun);
-                   if (showsick[9].equals("NULL")||sun==0){
-                       if (!showsick[i].equals("NULL")) {
+                   if (showsick[9].equals("NULL")){
+                       sun--;
+                       if (!showsick[sun].equals("NULL")) {
                            tempT = getResources().getIdentifier(idtime[i], "id", getPackageName());
                            tempS = getResources().getIdentifier(idsick[i], "id", getPackageName());
-                           Time[i] = (TextView) findViewById(tempT);
-                           Time[i].setText(showday[i]);
-                           Sick[i] = (TextView) findViewById(tempS);
-                           Sick[i].setText(showsick[i]);
+                           Time[sun] = (TextView) findViewById(tempT);
+                           Time[sun].setText(showday[sun]);
+                           Sick[sun] = (TextView) findViewById(tempS);
+                           Sick[sun].setText(showsick[sun]);
+                           Log.d("26JanV1", "showday[i] showday[i]  " + showday[i]);
                        }
-
+                       if (sun == 0) {
+                           i = 10;
+                       }
                    }else {
                        sun--;
-                       if(su!=sun) {
+
+
                            tempT = getResources().getIdentifier(idtime[i], "id", getPackageName());
                            tempS = getResources().getIdentifier(idsick[i], "id", getPackageName());
 
                            Time[sun] = (TextView) findViewById(tempT);
-                           Time[sun].setText(showday[i]);
+                           Time[sun].setText(showday[sun]);
                            Sick[sun] = (TextView) findViewById(tempS);
-                           Sick[sun].setText(showsick[i]);
-                       }if (sun == 0) { sun = 10; }
+                           Sick[sun].setText(showsick[sun]);
+                           Log.d("26JanV1", "if(sun!=su)" + i);
+                           Log.d("26JanV1", "sunsunsunsunsun" + sun);
+
+                            if (sun == 0) { sun = 10;}
+                            //if(su==sun){i = 10;}
                    }
                  }
           } catch (Exception e) {
