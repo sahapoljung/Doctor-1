@@ -75,7 +75,7 @@
 
                         android:text=""
                         android:textColor="#F77D74"
-                        android:textSize="@dimen/h1" />
+                        android:textSize="@dimen/s1" />
 
 
                 </LinearLayout>
@@ -102,6 +102,7 @@
                     android:orientation="horizontal">
 
                     <android.support.constraint.ConstraintLayout
+                        android:id="@+id/clchoos"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 

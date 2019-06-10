@@ -1,6 +1,8 @@
 package th.ac.kmutnb.doctor;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -23,6 +25,29 @@ public class AnalysisActivity extends AppCompatActivity {
         }
 
     }//main funtion
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder dialog= new AlertDialog.Builder(this);
+        dialog.setTitle("Exit");
+        dialog.setIcon(R.drawable.ic_action_exit);
+        dialog.setCancelable(true);
+        dialog.setMessage("คุณต้องการออกจากการวินิจฉัยหรือไม่");
+        dialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
+            }
+        });
 
+        dialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+
+        dialog.show();
+
+
+
+    }
 
 }

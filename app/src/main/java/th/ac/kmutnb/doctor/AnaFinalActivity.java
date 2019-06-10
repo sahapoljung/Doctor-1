@@ -1,5 +1,6 @@
 package th.ac.kmutnb.doctor;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -26,13 +27,15 @@ public class AnaFinalActivity extends AppCompatActivity implements View.OnClickL
     String[] showsick = {"", "", "", "", "", "", "", "", "", ""}, showday = {"", "", "", "", "", "", "", "", "", ""}, updata = new String[8];
 
     String sum,numday;
-
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
+        progressDialog = new ProgressDialog(AnaFinalActivity.this);
+        progressDialog.setTitle("");
+        progressDialog.setMessage("Loading...");
+        progressDialog.show();
         setContentView(R.layout.activity_ana_final);
         TextView textView1 = findViewById(R.id.txtdataroc);
         TextView textView2 = findViewById(R.id.txtdatamol);
@@ -49,10 +52,13 @@ public class AnaFinalActivity extends AppCompatActivity implements View.OnClickL
         Log.d("26JanV1", "Don't ID idString   ==>"+idString);
 
       try {
+
               if (idString.equals(null)) {
               } else {
+
                   Postdata();
                   TimeMain();
+
               }
 
 
@@ -72,8 +78,9 @@ public class AnaFinalActivity extends AppCompatActivity implements View.OnClickL
 
 
         // time();
-
+        progressDialog.dismiss();
         sack(textView1, textView2, textView3, textView4, textView5);
+
     }
 
     private void TimeMain() {

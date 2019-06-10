@@ -18,40 +18,103 @@
 
             <TextView
 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
                 android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:text="       คำถามที่ใช้วินิจฉัยและข้อมูลโรคได้รวบรวมมาจาก หนังสือตำราการตรวจรักษาโรคทั่วไป 1 &amp; 2 และเว็ปไซต์ POBPAD กับ เว็ปไซต์ honestdocs ซึ่งหนังสือเล่มนี้เป็นที่ยอมรับภายในวงการแพทย์ว่าสามารถนำมาใช้ได้จริง
+
+\n       ในส่วนของเว็ปไซต์นั้นได้ถูกพัฒนาโดยแพทย์ทำให้มีความน่าเชื่อถือ ในท้ายที่สุดได้นำคำถามที่ถูกคัดกรองจากคณะผู้จัดทำไปตรวจสอบที่โรงพยาบาล บ้านแพ้ว สาขา พระราม 2 ซึ่งได้รับการยืนยันว่ามีความปลอดภัย"
+                android:textColor="@color/colorblack"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="10dp"
+                    android:text="ข้อมูลจาก : "
+                    android:textColor="@color/colorblack"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="10dp"
+                        android:text="หนังสือ ตำราการตรวจรักษาโรคทั่วไป เล่ม 1 และ 2 ของนายแพทย์สุรเกียรติ อาชานานุภาพ "
+                        android:textColor="@color/colorblack"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="10dp"
+                        android:text="เว็ปไซต์ www.pobpad.com \nและ www.honestdocs.co "
+                        android:textColor="@color/colorblack"
+                        android:textSize="20sp" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/book1" />
+
+            <TextView
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginTop="25dp"
                 android:text="คณะผู้จัดทำ"
                 android:textColor="@color/colorblack"
                 android:textSize="@dimen/h1"
                 android:textStyle="bold" />
 
 
-
             <ImageView
-                android:layout_marginTop="15dp"
                 android:id="@+id/imageView"
                 android:layout_width="203dp"
                 android:layout_height="158dp"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
                 android:src="@drawable/art" />
 
             <TextView
-                android:layout_margin="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:layout_margin="5dp"
                 android:text="นาย  ธนเดช โชคอำนวย"
                 android:textColor="@color/colorblack"
                 android:textSize="@dimen/s2"
                 android:textStyle="bold" />
 
             <TextView
-                android:layout_margin="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:layout_margin="5dp"
                 android:text="รหัส 6003052411054"
                 android:textColor="@color/colorblack"
                 android:textSize="@dimen/s2"
@@ -69,80 +132,80 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:gravity="center_horizontal"
-                android:layout_margin="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:layout_margin="5dp"
+                android:gravity="center_horizontal"
                 android:text="ภาควิชาเทคโนโลยีวิศวกรรมอิเล็กทรอนิกส์"
                 android:textColor="@color/colorblack"
                 android:textSize="@dimen/s2"
                 android:textStyle="bold" />
 
             <TextView
-                android:layout_margin="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:layout_margin="5dp"
                 android:text="วิทยาลัยเทคโนโลยีอุตสาหกรรม"
                 android:textColor="@color/colorblack"
                 android:textSize="@dimen/s2"
                 android:textStyle="bold" />
             <!--คนที่สอง-->
             <ImageView
-                android:layout_marginTop="15dp"
                 android:layout_width="203dp"
                 android:layout_height="158dp"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
                 android:src="@drawable/sam" />
 
             <TextView
-                android:layout_margin="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:layout_margin="5dp"
                 android:text="นาย  สหพล สำเภาทอง"
                 android:textColor="@color/colorblack"
                 android:textSize="@dimen/s2"
                 android:textStyle="bold" />
 
             <TextView
-                android:layout_margin="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:layout_margin="5dp"
                 android:text="รหัส 6003052411127"
                 android:textColor="@color/colorblack"
                 android:textSize="@dimen/s2"
                 android:textStyle="bold" />
 
             <TextView
-                android:gravity="center_horizontal"
-                android:layout_margin="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:layout_margin="5dp"
+                android:gravity="center_horizontal"
                 android:text="สาขาวิชาเทคโนโลยีอิเล็กทรอนิกส์(โทรคมนาคม)"
                 android:textColor="@color/colorblack"
                 android:textSize="@dimen/s2"
                 android:textStyle="bold" />
 
             <TextView
-                android:gravity="center_horizontal"
-                android:layout_margin="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:layout_margin="5dp"
+                android:gravity="center_horizontal"
                 android:text="ภาควิชาเทคโนโลยีวิศวกรรมอิเล็กทรอนิกส์"
                 android:textColor="@color/colorblack"
                 android:textSize="@dimen/s2"
                 android:textStyle="bold" />
 
             <TextView
-                android:layout_margin="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:layout_margin="5dp"
                 android:text="วิทยาลัยเทคโนโลยีอุตสาหกรรม"
                 android:textColor="@color/colorblack"
                 android:textSize="@dimen/s2"
